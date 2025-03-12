@@ -1,3 +1,3 @@
 ## Figura 3D generada de 48 vertices con OPEN_GL 
 
-![Preview](https://github.com/Fournext/Figura3D_OpenGL_1/issues/1#issue-2912169117)
+![Image](https://github.com/user-attachments/assets/ca5bf6db-5a04-435a-b73e-9c95001a8398)
