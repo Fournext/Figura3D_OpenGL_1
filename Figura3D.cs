@@ -3,18 +3,29 @@ using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Desktop;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Windowing.GraphicsLibraryFramework;
+using System.Runtime.CompilerServices;
 
 namespace OpenTKCubo3D
 {
     class Program : GameWindow
     {
+        
         private float _angleY; // Ángulo de rotación en el eje Y (izquierda/derecha)
         private float _angleX; // Ángulo de rotación en el eje X (arriba/abajo)
         private int _vertexBufferObject;
         private int _vertexArrayObject;
+        //Para los ejes
+        private int _EjeVertexBufferObject;
+        private int _EjeVertexArrayObject;
+
         private int _shaderProgram;
         private Matrix4 _view;
         private Matrix4 _projection;
+
+        //Vertices modificables
+        public float Vx;
+        public float Vy;
+        public float Vz; 
 
         public Program(GameWindowSettings gameWindowSettings, NativeWindowSettings nativeWindowSettings)
             : base(gameWindowSettings, nativeWindowSettings)
@@ -26,118 +37,132 @@ namespace OpenTKCubo3D
            base.OnLoad();
             GL.ClearColor(0.1f, 0.1f, 0.2f, 1.0f);
             GL.Enable(EnableCap.DepthTest);
-
+ 
             // Configurar los vértices del cubo
             float[] vertices = {
                 //Sentido Horario
                 // Base
                 //Punto Inicial->Der
-                -0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 0.0f, // Punto Inicial, rojo
-                 1.0f, -0.5f,  0.0f, 0.0f, 1.0f, 0.0f, // verde
+                 Vx,      Vy, Vz,  1.0f, 0.0f, 0.0f, // Punto Inicial, rojo
+                 Vx+1.5f, Vy, Vz, 0.0f, 1.0f, 0.0f, // verde 
                 
                 //Der->Arri
-                 1.0f, -0.5f,  0.0f, 0.0f, 1.0f, 0.0f, // verde
-                 1.0f, -0.5f, -0.5f, 0.0f, 0.0f, 1.0f, // azul
+                 Vx+1.5f, Vy, Vz,    0.0f, 1.0f, 0.0f, // verde
+                 Vx+1.5f, Vy, Vz-0.5f, 0.0f, 0.0f, 1.0f, // azul
                 
                 //Arri->Izq
-                 1.0f, -0.5f, -0.5f, 0.0f, 0.0f, 1.0f, // azul
-                -0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, // rojo
+                 Vx+1.5f, Vy, Vz-0.5f, 0.0f, 0.0f, 1.0f, // azul
+                 Vx,      Vy, Vz-0.5f, 1.0f, 0.0f, 0.0f, // rojo
 
                 //Izq->Abajo
-                -0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, // rojo
-                -0.5f, -0.5f,  0.0f, 0.0f, 1.0f, 0.0f, // Verde
+                 Vx,      Vy, Vz-0.5f, 1.0f, 0.0f, 0.0f, // rojo
+                 Vx,      Vy, Vz, 0.0f, 1.0f, 0.0f, // Verde
 
 
                 //1° Pilar
                 //Abajo->Arri
-                -0.5f, -0.5f,  0.0f, 0.0f, 1.0f, 0.0f, // Punto Inicial, Verde
-                -0.5f,  1.5f,  0.0f, 0.0f, 1.0f, 0.0f, // Verde
+                 Vx,   Vy,      Vz, 0.0f, 1.0f, 0.0f, // Punto Inicial, Verde
+                 Vx,   Vy+2.0f, Vz, 0.0f, 1.0f, 0.0f, // Verde
 
                 //Base.Izq->Arri
-                -0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, // rojo
-                -0.5f,  1.5f, -0.5f, 0.0f, 0.0f, 1.0f, // Verde
+                 Vx,   Vy,      Vz-0.5f, 1.0f, 0.0f, 0.0f, // rojo
+                 Vx,    Vy+2.0f, Vz -0.5f, 0.0f, 0.0f, 1.0f, // Verde
                 
                 //Base.Ini: x+0.35 y+0.35 -> Arriba
-                -0.15f, -0.15f,  0.0f, 1.0f, 0.0f, 0.0f, // rojo
-                -0.15f,  1.5f,   0.0f, 0.0f, 0.0f, 1.0f, // azul
+                Vx+0.35f, Vy+0.35f,  Vz, 1.0f, 0.0f, 0.0f, // rojo
+                Vx+0.35f, Vy+2.0f,   Vz, 0.0f, 0.0f, 1.0f, // azul
 
                 //Base.Ini: x+0.35 y+0.35 -> Base.Ini: x+0.35 y+0.35 z-0.5
-                -0.15f, -0.15f,  0.0f, 0.0f, 0.0f, 1.0f, // azul
-                -0.15f, -0.15f, -0.5f, 1.0f, 0.0f, 0.0f, // rojo
+                Vx+0.35f, Vy+0.35f,  Vz,      0.0f, 0.0f, 1.0f, // azul
+                Vx+0.35f, Vy+0.35f,  Vz-0.5f, 1.0f, 0.0f, 0.0f, // rojo
 
                 //Base.Ini: x+0.35 y+0.35 z-0.5 -> Arriba
-                -0.15f, -0.15f, -0.5f, 1.0f, 0.0f, 0.0f, // rojo
-                -0.15f,  1.5f, -0.5f, 0.0f, 0.0f, 1.0f, // azul
+                Vx+0.35f, Vy+0.35f,  Vz-0.5f, 1.0f, 0.0f, 0.0f, // rojo
+                Vx+0.35f, Vy+2.0f,   Vz-0.5f, 0.0f, 0.0f, 1.0f, // azul
 
 
                 //2° Pilar
                 //Base.Der->Arri
-                 1.0f, -0.5f,  0.0f, 0.0f, 1.0f, 0.0f, // verde
-                 1.0f,  1.5f,  0.0f, 1.0f, 0.0f, 0.0f, // Rojo
+                 Vx+1.5f, Vy,      Vz, 0.0f, 1.0f, 0.0f, // verde
+                 Vx+1.5f, Vy+2.0f, Vz, 1.0f, 0.0f, 0.0f, // Rojo
 
                 //Base.Arriba->Arri
-                 1.0f, -0.5f, -0.5f, 0.0f, 0.0f, 1.0f, // azul
-                 1.0f,  1.5f, -0.5f, 0.0f, 1.0f, 0.0f, // verde
+                 Vx+1.5f, Vy,      Vz-0.5f, 0.0f, 0.0f, 1.0f, // azul
+                 Vx+1.5f, Vy+2.0f, Vz-0.5f, 0.0f, 1.0f, 0.0f, // verde
                 
                 //Base.Der: x-0.35 y+0.35 -> Arriba
-                 0.65f,  -0.15f,  0.0f, 1.0f, 0.0f, 0.0f, // rojo
-                 0.65f,   1.5f,  0.0f, 0.0f, 0.0f, 1.0f, // azul
+                 Vx+1.15f, Vy+0.35f, Vz, 1.0f, 0.0f, 0.0f, // rojo
+                 Vx+1.15f, Vy+2.0f,  Vz, 0.0f, 0.0f, 1.0f, // azul
 
                 //Base.Der: x-0.35 y+0.35 -> Base.Ini: -0.35 y+0.35 z-0.5
-                 0.65f, -0.15f,  0.0f, 0.0f, 0.0f, 1.0f, // azul
-                 0.65f, -0.15f, -0.5f, 1.0f, 0.0f, 0.0f, // rojo
+                 Vx+1.15f, Vy+0.35f, Vz,      0.0f, 0.0f, 1.0f, // azul
+                 Vx+1.15f, Vy+0.35f, Vz-0.5f, 1.0f, 0.0f, 0.0f, // rojo
 
                 //Base.Der: x-0.35 y+0.35 z-0.5 -> Arriba
-                 0.65f, -0.15f, -0.5f, 1.0f, 0.0f, 0.0f, // rojo
-                 0.65f,  1.5f,  -0.5f, 0.0f, 0.0f, 1.0f, // azul
+                 Vx+1.15f, Vy+0.35f, Vz-0.5f, 1.0f, 0.0f, 0.0f, // rojo
+                 Vx+1.15f, Vy+2.00f, Vz-0.5f, 0.0f, 0.0f, 1.0f, // azul
 
 
                 //Union de los Pilares
                 //Base.Ini: x+0.35 y+0.35 -> Base.Der: x-0.35 y+0.35
-                -0.15f, -0.15f,  0.0f, 0.0f, 1.0f, 0.0f, // Verde
-                 0.65f, -0.15f,  0.0f, 0.0f, 1.0f, 0.0f, // Verde
+                 Vx+0.35f, Vy+0.35f,  Vz, 0.0f, 1.0f, 0.0f, // Verde
+                 Vx+1.15f, Vy+0.35f,  Vz, 0.0f, 1.0f, 0.0f, // Verde
                 
                 //Base.Ini: x+0.35 y+0.35 z-0.5 -> Base.Der: x-0.35 y+0.35 z-0.5
-                -0.15f, -0.15f, -0.5f, 0.0f, 0.0f, 1.0f, // azul
-                 0.65f, -0.15f, -0.5f, 0.0f, 0.0f, 1.0f, // azul
+                 Vx+0.35f, Vy+0.35f, Vz-0.5f, 0.0f, 0.0f, 1.0f, // azul
+                 Vx+1.15f, Vy+0.35f, Vz-0.5f, 0.0f, 0.0f, 1.0f, // azul
 
 
                 //Tapa del Primer Pilar
                 //Pilar 1.Arriba.Punto Inicial -> Base.Ini: x+0.35 y+0.35.Arriba
-                -0.5f,  1.5f, 0.0f, 0.0f, 1.0f, 0.0f, // Verde
-                -0.15f, 1.5f, 0.0f, 0.0f, 0.0f, 1.0f, // azul
+                Vx,       Vy+2.00f, Vz, 0.0f, 1.0f, 0.0f, // Verde
+                Vx+0.35f, Vy+2.00f, Vz, 0.0f, 0.0f, 1.0f, // azul
                  
-                 //Base.Ini: x+0.35 y+0.35.Arriba -> Base.Ini: x+0.35 y+0.35 z-0.5 .Arriba
-                -0.15f, 1.5f, 0.0f, 0.0f, 0.0f, 1.0f, // azul
-                -0.15f, 1.5f,-0.5f, 1.0f, 0.0f, 0.0f, // rojo
+                //Base.Ini: x+0.35 y+0.35.Arriba -> Base.Ini: x+0.35 y+0.35 z-0.5 .Arriba
+                Vx+0.35f, Vy+2.00f, Vz,      0.0f, 0.0f, 1.0f, // azul
+                Vx+0.35f, Vy+2.00f, Vz-0.5f, 1.0f, 0.0f, 0.0f, // rojo
                 
                 //Base.Ini: x+0.35 y+0.35 z-0.5 .Arriba -> Base.Izq.Arri
-                -0.15f, 1.5f,-0.5f, 1.0f, 0.0f, 0.0f, // rojo
-                -0.5f,  1.5f, -0.5f, 0.0f, 1.0f, 0.0f, // verde
+                Vx+0.35f, Vy+2.00f, Vz-0.5f, 1.0f, 0.0f, 0.0f, // rojo
+                Vx,       Vy+2.00f, Vz-0.5f, 0.0f, 1.0f, 0.0f, // verde
 
-                //Base.Izq.Arri
-                -0.5f,  1.5f,-0.5f, 0.0f, 1.0f, 0.0f, // verde
-                -0.5f,  1.5f, 0.0f, 1.0f, 0.0f, 0.0f, // Rojo
+                //Base.Izq.Arri -> Base.Arriba
+                Vx,       Vy+2.00f, Vz-0.5f, 0.0f, 1.0f, 0.0f, // verde
+                Vx,       Vy+2.00f, Vz,      1.0f, 0.0f, 0.0f, // Rojo
 
 
-                //Tapa del Primer Pilar
+                //Tapa del Segundo Pilar
                 //Base.Der.Arri -> Base.Arriba.Arri
-                1.0f,  1.5f,  0.0f, 1.0f, 0.0f, 0.0f, // Rojo
-                1.0f,  1.5f, -0.5f, 0.0f, 1.0f, 0.0f, // verde
+                Vx+1.50f,  Vy+2.00f,  Vz,      1.0f, 0.0f, 0.0f, // Rojo
+                Vx+1.50f,  Vy+2.00f,  Vz-0.5f, 0.0f, 1.0f, 0.0f, // verde
 
                 //Base.Arriba.Arri -> Base.Der: x-0.35 y+0.35 z-0.5 .Arriba
-                1.0f,  1.5f, -0.5f, 0.0f, 1.0f, 0.0f, // verde
-                0.65f, 1.5f, -0.5f, 0.0f, 0.0f, 1.0f, // azul
+                Vx+1.50f,  Vy+2.00f,  Vz-0.5f, 0.0f, 1.0f, 0.0f, // verde
+                Vx+1.15f,  Vy+2.00f,  Vz-0.5f, 0.0f, 0.0f, 1.0f, // azul
 
                 //Base.Der: x-0.35 y+0.35 z-0.5 .Arriba -> Base.Der: x-0.35 y+0.35 .Arriba
-                0.65f,  1.5f,  -0.5f, 0.0f, 0.0f, 1.0f, // azul
-                0.65f,  1.5f,  0.0f, 1.0f, 0.647f, 0.0f, // naranja
+                Vx+1.15f,  Vy+2.00f,  Vz-0.5f, 0.0f, 0.0f, 1.0f, // azul
+                Vx+1.15f,  Vy+2.00f,  Vz     , 1.0f, 0.647f, 0.0f, // naranja
 
                 //Base.Der: x-0.35 y+0.35 .Arriba -> Base.Der.Arri
-                0.65f,  1.5f,  0.0f, 1.0f, 0.647f, 0.0f, // naranja
-                1.0f,  1.5f,  0.0f, 1.0f, 0.0f, 0.0f, // Rojo
+                Vx+1.15f,  Vy+2.00f,  Vz, 1.0f, 0.647f, 0.0f, // naranja
+                Vx+1.50f,  Vy+2.00f,  Vz, 1.0f, 0.0f, 0.0f, // Rojo
 
+                
+            };
+            float[] Eje_Vertices = {
+                ///MAPA CARTESIANO
+                //Eje X
+                 2.00f, 0.0f ,0.0f, 1.0f, 1.0f, 1.0f,
+                -2.00f, 0.0f ,0.0f, 1.0f, 1.0f, 1.0f,
+                
+                //Eje Y
+                0.0f, 2.0f, 0.0f, 1.0f,1.0f,1.0f,
+                0.0f,-2.0f, 0.0f, 1.0f,1.0f,1.0f,
 
+                //Eje Z
+                0.0f, 0.0f, 2.0f, 1.0f,1.0f,1.0f,
+                0.0f, 0.0f,-2.0f, 1.0f,1.0f,1.0f,
             };
 
             // Crear y enlazar el VAO
@@ -150,6 +175,22 @@ namespace OpenTKCubo3D
             GL.BufferData(BufferTarget.ArrayBuffer, vertices.Length * sizeof(float), vertices, BufferUsageHint.StaticDraw);
 
             // Configurar el atributo de posición (posición y color están intercalados)
+            GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 0);
+            GL.EnableVertexAttribArray(0);
+
+            GL.VertexAttribPointer(1, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 3 * sizeof(float));
+            GL.EnableVertexAttribArray(1);
+
+            // Crear y enlazar el VAO para los ejes
+            _EjeVertexArrayObject = GL.GenVertexArray();
+            GL.BindVertexArray(_EjeVertexArrayObject);
+
+            // Crear y enlazar el VBO para los ejes
+            _EjeVertexBufferObject = GL.GenBuffer();
+            GL.BindBuffer(BufferTarget.ArrayBuffer, _EjeVertexBufferObject);
+            GL.BufferData(BufferTarget.ArrayBuffer, Eje_Vertices.Length * sizeof(float), Eje_Vertices, BufferUsageHint.StaticDraw);
+
+            // Configurar el atributo de posición para los ejes
             GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), 0);
             GL.EnableVertexAttribArray(0);
 
@@ -201,7 +242,7 @@ namespace OpenTKCubo3D
             GL.DeleteShader(fragmentShader);
 
             // Configurar la vista y la proyección
-            _view = Matrix4.LookAt(new Vector3(0, 0, 5), Vector3.Zero, Vector3.UnitY);
+            _view = Matrix4.LookAt(new Vector3(5, 5, 7), Vector3.Zero, Vector3.UnitY);
             _projection = Matrix4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, Size.X / (float)Size.Y, 0.1f, 100f);
         }
 
@@ -259,12 +300,18 @@ namespace OpenTKCubo3D
             GL.BindVertexArray(_vertexArrayObject);
             GL.DrawArrays(PrimitiveType.Lines, 0, 48); 
 
+            // Dibujar los ejes sin rotación
+            Matrix4 identityMatrix = Matrix4.Identity; // Crear una copia local de la matriz identidad
+            GL.UniformMatrix4(GL.GetUniformLocation(_shaderProgram, "model"), false, ref identityMatrix);
+            GL.BindVertexArray(_EjeVertexArrayObject);
+            GL.DrawArrays(PrimitiveType.Lines, 0, 6); // Dibujar los ejes
 
             SwapBuffers();
         }
 
         static void Main(string[] args)
-        {
+        {   
+            
             var nativeWindowSettings = new NativeWindowSettings()
             {
                 ClientSize = new Vector2i(800, 600),
@@ -274,7 +321,10 @@ namespace OpenTKCubo3D
             };
 
             using (var window = new Program(GameWindowSettings.Default, nativeWindowSettings))
-            {
+            {   
+                window.Vx = -0.75f;
+                window.Vy = 0.0f;
+                window.Vz = 0.25f;
                 window.Run();
             }
         }

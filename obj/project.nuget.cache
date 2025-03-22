@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "okByXn55OtA=",
+  "dgSpecHash": "xxOdE4ZJ8VE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\sebas\\Desktop\\P-Grafica\\Tarea1-Figura\\Figura\\Figura.csproj",
+  "projectFilePath": "C:\\Users\\sebas\\Desktop\\P-Grafica\\Tarea2\\Figura3D_OpenGL_1\\Figura.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sebas\\.nuget\\packages\\opentk\\4.9.3\\opentk.4.9.3.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\opentk.audio.openal\\4.9.3\\opentk.audio.openal.4.9.3.nupkg.sha512",
