@@ -1,0 +1,607 @@
+{
+  "objetos": [
+    {
+      "partes": [
+        {
+          "caras": [
+            {
+              "vertices": [
+                {
+                  "PosicionRelativa": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0,
+                    "y": 0,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0,
+                    "y": 0,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0,
+                    "y": 2,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0,
+                    "y": 0,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0,
+                    "y": 2,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0.35,
+                    "y": 0.35,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0.35,
+                    "y": 2,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0.35,
+                    "y": 0.35,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0.35,
+                    "y": 0.35,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0.35,
+                    "y": 0.35,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0.35,
+                    "y": 2,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.5,
+                    "y": 2,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.5,
+                    "y": 0,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.5,
+                    "y": 2,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.15,
+                    "y": 0.35,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.15,
+                    "y": 2,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.15,
+                    "y": 0.35,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.15,
+                    "y": 0.35,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.15,
+                    "y": 0.35,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.15,
+                    "y": 2,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0.35,
+                    "y": 0.35,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.15,
+                    "y": 0.35,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0.35,
+                    "y": 0.35,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.15,
+                    "y": 0.35,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0,
+                    "y": 2,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0.35,
+                    "y": 2,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0.35,
+                    "y": 2,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0.35,
+                    "y": 2,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0.35,
+                    "y": 2,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0,
+                    "y": 2,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0,
+                    "y": 2,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 0,
+                    "y": 2,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.5,
+                    "y": 2,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.5,
+                    "y": 2,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.5,
+                    "y": 2,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.15,
+                    "y": 2,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.15,
+                    "y": 2,
+                    "z": -0.5
+                  },
+                  "Color": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.15,
+                    "y": 2,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0.647,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.15,
+                    "y": 2,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0.647,
+                    "z": 0
+                  }
+                },
+                {
+                  "PosicionRelativa": {
+                    "x": 1.5,
+                    "y": 2,
+                    "z": 0
+                  },
+                  "Color": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                  }
+                }
+              ]
+            }
+          ],
+          "origenRelativo": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ],
+      "origenRelativo": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    }
+  ],
+  "centroMasa": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  }
+}
