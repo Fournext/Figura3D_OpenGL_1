@@ -3,13 +3,9 @@ using System.Text.Json.Serialization;
 
 public class Objeto
 {
-    [JsonPropertyName("partes")]
     public List<Parte> _partes { get; set; } = new List<Parte>();
-    [JsonPropertyName("origenRelativo")]
     public Vector3 OrigenRelativo { get; set; }
-
-    [JsonConstructor]
-     public Objeto() { }
+    
     public Objeto(Vector3 origenRelativo)
     {
         OrigenRelativo = origenRelativo;
@@ -30,11 +26,4 @@ public class Objeto
         }
     }
 
-     public void ReconstruirBuffers()
-    {
-        foreach (var parte in _partes)
-        {
-            parte.ReconstruirBuffers();
-        }
-    }
 }

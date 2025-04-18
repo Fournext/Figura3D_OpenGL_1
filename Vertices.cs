@@ -1,13 +1,10 @@
 using OpenTK.Mathematics;
-using System.Text.Json.Serialization;
 
 public class Vertice
 {
     public Vector3 PosicionRelativa { get; }
     public Vector3 Color { get; }
 
-    [JsonConstructor]
-    public Vertice() { }
     public Vertice(Vector3 posicionRelativa, Vector3 color)
     {
         PosicionRelativa = posicionRelativa;

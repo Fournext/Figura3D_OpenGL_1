@@ -15,6 +15,7 @@ namespace OpenTKCubo3D
         private Matrix4 _projection;
         private Escenario? _escenario;
         private Escenario? _escenario2;
+        Serialicer serialicer = new Serialicer();
 
         public static int ShaderProgram { get; private set; }
 
@@ -24,6 +25,7 @@ namespace OpenTKCubo3D
         }
 
 
+        public Action<int?> OnLoadCustom;
         protected override void OnLoad()
         {
             base.OnLoad();
@@ -33,86 +35,127 @@ namespace OpenTKCubo3D
             _view = Matrix4.LookAt(new Vector3(5, 5, 7), Vector3.Zero, Vector3.UnitY);
             _projection = Matrix4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, Size.X / (float)Size.Y, 0.1f, 100f);
 
+            OnLoadCustom?.Invoke(ShaderProgram);
 
-            _escenario = new Escenario(Vector3.Zero, ShaderProgram);
+             //_escenario = new Escenario(Vector3.Zero, ShaderProgram);
+             _escenario2 = serialicer.CargarDesdeJson<Escenario>("escenario.json");
+             _escenario2.SetShaderProgram(ShaderProgram);
+            Console.WriteLine($"Objetos cargados: {_escenario2._objetos.Count}");
+            foreach (var obj in _escenario2._objetos){
+                Console.WriteLine($" Partes: {obj._partes.Count}");
+            }
+                
+                
             
-            //_escenario2.SetShaderProgram(ShaderProgram);
+            // //1) Definición del array de vértices (igual que antes)
+            // var vertices = new Vertice[]
+            // {
+            //     // Base
+            //     new Vertice(new Vector3(0,    0,   0),   new Vector3(1,0,0)), // 0
+            //     new Vertice(new Vector3(1.5f, 0,   0),   new Vector3(0,1,0)), // 1
+            //     new Vertice(new Vector3(1.5f, 0,  -0.5f),new Vector3(0,0,1)), // 2
+            //     new Vertice(new Vector3(0,    0,  -0.5f),new Vector3(1,0,0)), // 3
+
+            //     // Primer Pilar
+            //     new Vertice(new Vector3(0,    2.0f,   0),   new Vector3(0,1,0)), // 4
+            //     new Vertice(new Vector3(0,    2.0f,  -0.5f),new Vector3(0,0,1)), // 5
+            //     new Vertice(new Vector3(0.35f,0.35f,  0),   new Vector3(1,0,0)), // 6
+            //     new Vertice(new Vector3(0.35f,2.0f,  0),   new Vector3(0,0,1)), // 7
+            //     new Vertice(new Vector3(0.35f,0.35f,-0.5f),new Vector3(1,0,0)), // 8
+            //     new Vertice(new Vector3(0.35f,2.0f, -0.5f),new Vector3(0,0,1)), // 9
+
+            //     // Segundo Pilar
+            //     new Vertice(new Vector3(1.5f,2.0f,   0),   new Vector3(1,0,0)), // 10
+            //     new Vertice(new Vector3(1.5f,2.0f,  -0.5f),new Vector3(0,1,0)), // 11
+            //     new Vertice(new Vector3(1.15f,0.35f, 0),   new Vector3(1,0,0)), // 12
+            //     new Vertice(new Vector3(1.15f,2.0f,  0),   new Vector3(0,0,1)), // 13
+            //     new Vertice(new Vector3(1.15f,0.35f,-0.5f),new Vector3(1,0,0)), // 14
+            //     new Vertice(new Vector3(1.15f,2.0f, -0.5f),new Vector3(0,0,1)), // 15
+            //     new Vertice(new Vector3(1.15f,2.0f,   0),   new Vector3(1,0.647f,0)), // 16
+            // };
+
+            // // 2) Caras
+
+            // // 2a) Cara de la base
+            // var caraBase = new Cara(new List<Vertice>
+            // {
+            //     vertices[0], vertices[1],
+            //     vertices[1], vertices[2],
+            //     vertices[2], vertices[3],
+            //     vertices[3], vertices[0],
+            // });
+
+            // // 2b) Cara del primer pilar
+            // var caraPilar1 = new Cara(new List<Vertice>
+            // {
+            //     vertices[0], vertices[4],  // vertical frontal
+            //     vertices[3], vertices[5],  // vertical trasera
+            //     vertices[6], vertices[7],  // diagonal frontal
+            //     vertices[6], vertices[8],  // horizontal interior
+            //     vertices[8], vertices[9],  // diagonal trasera
+            // });
+
+            // // 2c) Cara del segundo pilar
+            // var caraPilar2 = new Cara(new List<Vertice>
+            // {
+            //     vertices[1], vertices[10],
+            //     vertices[2], vertices[11],
+            //     vertices[12], vertices[13],
+            //     vertices[12], vertices[14],
+            //     vertices[14], vertices[15],
+            // });
+
+            // // 2d) Cara de las uniones entre pilares (la “U” superior)
+            // var caraUniones = new Cara(new List<Vertice>
+            // {
+            //     vertices[6], vertices[12], // frontal
+            //     vertices[8], vertices[14], // trasera
+            // });
+
+            // // 2e) Cara de las tapas (bases superiores de los pilares)
+            // var caraTapas = new Cara(new List<Vertice>
+            // {
+            //     // tapa primer pilar
+            //     vertices[4], vertices[7],
+            //     vertices[7], vertices[9],
+            //     vertices[9], vertices[5],
+            //     vertices[5], vertices[4],
+
+            //     // tapa segundo pilar
+            //     vertices[10], vertices[11],
+            //     vertices[11], vertices[15],
+            //     vertices[15], vertices[16],
+            //     vertices[16], vertices[10],
+            // });
+
+            // // 3) Creamos cada Parte y le agregamos su(s) Cara(s)
+            // var parteBase    = new Parte(Vector3.Zero);
+            // parteBase.AgregarCara(caraBase);
+
+            // var partePilar1  = new Parte(Vector3.Zero);
+            // partePilar1.AgregarCara(caraPilar1);
+
+            // var partePilar2  = new Parte(Vector3.Zero);
+            // partePilar2.AgregarCara(caraPilar2);
+
+            // var parteUniones = new Parte(Vector3.Zero);
+            // parteUniones.AgregarCara(caraUniones);
+
+            // var parteTapas   = new Parte(Vector3.Zero);
+            // parteTapas.AgregarCara(caraTapas);
+
+            // // 4) Creamos el Objeto y le agregamos todas las Partes
+            // var objeto = new Objeto(Vector3.Zero);
+            // objeto.AgregarParte(parteBase);
+            // objeto.AgregarParte(partePilar1);
+            // objeto.AgregarParte(partePilar2);
+            // objeto.AgregarParte(parteUniones);
+            // objeto.AgregarParte(parteTapas);
+
+            // _escenario.AgregarObjeto(objeto);
+
             
-            var objeto = new Objeto(Vector3.Zero);
-            var parte = new Parte(Vector3.Zero);
-
-            var vertices = new Vertice[]
-            {
-                // Base
-                new Vertice(new Vector3(0, 0, 0), new Vector3(1.0f, 0.0f, 0.0f)),       // 0 - rojo
-                new Vertice(new Vector3(+1.5f, 0, 0), new Vector3(0.0f, 1.0f, 0.0f)),    // 1 - verde
-                new Vertice(new Vector3(+1.5f, 0, -0.5f), new Vector3(0.0f, 0.0f, 1.0f)), // 2 - azul
-                new Vertice(new Vector3(0, 0, -0.5f), new Vector3(1.0f, 0.0f, 0.0f)),     // 3 - rojo
-                
-                // Primer Pilar
-                new Vertice(new Vector3(0, +2.0f, 0), new Vector3(0.0f, 1.0f, 0.0f)),     // 4 - verde
-                new Vertice(new Vector3(0, +2.0f, -0.5f), new Vector3(0.0f, 0.0f, 1.0f)), // 5 - azul
-                new Vertice(new Vector3(+0.35f, +0.35f, 0), new Vector3(1.0f, 0.0f, 0.0f)), // 6 - rojo
-                new Vertice(new Vector3(+0.35f, +2.0f, 0), new Vector3(0.0f, 0.0f, 1.0f)), // 7 - azul
-                new Vertice(new Vector3(+0.35f, +0.35f, -0.5f), new Vector3(1.0f, 0.0f, 0.0f)), // 8 - rojo
-                new Vertice(new Vector3(+0.35f, +2.0f, -0.5f), new Vector3(0.0f, 0.0f, 1.0f)), // 9 - azul
-                
-                // Segundo Pilar
-                new Vertice(new Vector3(+1.5f, +2.0f, 0), new Vector3(1.0f, 0.0f, 0.0f)), // 10 - rojo
-                new Vertice(new Vector3(+1.5f, +2.0f, -0.5f), new Vector3(0.0f, 1.0f, 0.0f)), // 11 - verde
-                new Vertice(new Vector3(+1.15f, +0.35f, 0), new Vector3(1.0f, 0.0f, 0.0f)), // 12 - rojo
-                new Vertice(new Vector3(+1.15f, +2.0f, 0), new Vector3(0.0f, 0.0f, 1.0f)), // 13 - azul
-                new Vertice(new Vector3(+1.15f, +0.35f, -0.5f), new Vector3(1.0f, 0.0f, 0.0f)), // 14 - rojo
-                new Vertice(new Vector3(+1.15f, +2.0f, -0.5f), new Vector3(0.0f, 0.0f, 1.0f)), // 15 - azul
-                new Vertice(new Vector3(+1.15f, +2.0f, 0), new Vector3(1.0f, 0.647f, 0.0f)) // 16 - naranja
-            };
-
-            var caraAristas = new Cara(new List<Vertice>
-            {
-                // Base
-                vertices[0], vertices[1],  // línea inferior
-                vertices[1], vertices[2],  // línea derecha
-                vertices[2], vertices[3],  // línea superior
-                vertices[3], vertices[0],  // línea izquierda
-                
-                // Primer Pilar
-                vertices[0], vertices[4],  // línea vertical izquierda frontal
-                vertices[3], vertices[5],  // línea vertical izquierda trasera
-                vertices[6], vertices[7],  // línea diagonal frontal
-                vertices[6], vertices[8],  // línea horizontal diagonal
-                vertices[8], vertices[9],  // línea diagonal trasera
-                
-                // Segundo Pilar
-                vertices[1], vertices[10], // línea vertical derecha frontal
-                vertices[2], vertices[11], // línea vertical derecha trasera
-                vertices[12], vertices[13], // línea diagonal frontal
-                vertices[12], vertices[14], // línea horizontal diagonal
-                vertices[14], vertices[15], // línea diagonal trasera
-                
-                // Uniones entre pilares
-                vertices[6], vertices[12], // línea frontal entre pilares
-                vertices[8], vertices[14], // línea trasera entre pilares
-                
-                // Tapas de pilares
-                // Primer pilar
-                vertices[4], vertices[7],
-                vertices[7], vertices[9],
-                vertices[9], vertices[5],
-                vertices[5], vertices[4],
-                
-                // Segundo pilar
-                vertices[10], vertices[11],
-                vertices[11], vertices[15],
-                vertices[15], vertices[16],
-                vertices[16], vertices[10]
-            });
-
-            parte.AgregarCara(caraAristas);
-            objeto.AgregarParte(parte);
-            _escenario.AgregarObjeto(objeto);
-            //_escenario.GuardarAJson("escenario.json");
-            //_escenario2.CargarDesdeJson("cubo.json");
-            //_escenario2 = Escenario.CargarDesdeJson("escenario.json", ShaderProgram);
+            // serialicer.GuardarAJson(_escenario, "escenario.json");
         }
 
         protected override void OnResize(ResizeEventArgs e)
@@ -178,8 +221,8 @@ namespace OpenTKCubo3D
             GL.UniformMatrix4(GL.GetUniformLocation(ShaderProgram, "projection"), false, ref _projection);
             GL.UniformMatrix4(GL.GetUniformLocation(ShaderProgram, "model"), false, ref model);
             
-            _escenario?.Dibujar();
-            //_escenario2?.Dibujar();
+            //_escenario?.Dibujar();
+            _escenario2?.Dibujar();
             SwapBuffers();
         }
 
