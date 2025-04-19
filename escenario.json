@@ -1,12 +1,12 @@
 {
-  "_objetos": [
-    {
-      "_partes": [
-        {
-          "_caras": [
-            {
-              "_vertices": [
-                {
+  "Objetos": {
+    "U": {
+      "Partes": {
+        "base": {
+          "Caras": {
+            "Abajo": {
+              "Vertices": {
+                "Abajo0": {
                   "PosicionRelativa": {
                     "X": 0,
                     "Y": 0,
@@ -18,9 +18,9 @@
                     "Z": 0
                   }
                 },
-                {
+                "Abajo1": {
                   "PosicionRelativa": {
-                    "X": 1.5,
+                    "X": 2,
                     "Y": 0,
                     "Z": 0
                   },
@@ -30,9 +30,9 @@
                     "Z": 0
                   }
                 },
-                {
+                "Abajo2": {
                   "PosicionRelativa": {
-                    "X": 1.5,
+                    "X": 2,
                     "Y": 0,
                     "Z": 0
                   },
@@ -42,9 +42,9 @@
                     "Z": 0
                   }
                 },
-                {
+                "Abajo3": {
                   "PosicionRelativa": {
-                    "X": 1.5,
+                    "X": 2,
                     "Y": 0,
                     "Z": -0.5
                   },
@@ -54,9 +54,9 @@
                     "Z": 1
                   }
                 },
-                {
+                "Abajo4": {
                   "PosicionRelativa": {
-                    "X": 1.5,
+                    "X": 2,
                     "Y": 0,
                     "Z": -0.5
                   },
@@ -66,7 +66,7 @@
                     "Z": 1
                   }
                 },
-                {
+                "Abajo5": {
                   "PosicionRelativa": {
                     "X": 0,
                     "Y": 0,
@@ -78,7 +78,7 @@
                     "Z": 0
                   }
                 },
-                {
+                "Abajo6": {
                   "PosicionRelativa": {
                     "X": 0,
                     "Y": 0,
@@ -90,7 +90,7 @@
                     "Z": 0
                   }
                 },
-                {
+                "Abajo7": {
                   "PosicionRelativa": {
                     "X": 0,
                     "Y": 0,
@@ -102,23 +102,549 @@
                     "Z": 0
                   }
                 }
-              ]
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Izquierda": {
+              "Vertices": {
+                "Izquierda0": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda1": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda2": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda3": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda4": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda5": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda6": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda7": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Frente": {
+              "Vertices": {
+                "Izquierda0": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda1": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda2": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda3": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda4": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda5": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda6": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda7": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Derecha": {
+              "Vertices": {
+                "Derecha0": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Derecha1": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Derecha2": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Derecha3": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Derecha4": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Derecha5": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Derecha6": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Derecha7": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Atras": {
+              "Vertices": {
+                "Atras0": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Atras1": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Atras2": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Atras3": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Atras4": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Atras5": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Atras6": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Atras7": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
             }
-          ],
+          },
           "OrigenRelativo": {
             "X": 0,
             "Y": 0,
             "Z": 0
+          },
+          "Rotacion": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "Posicion": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "Escala": {
+            "X": 1,
+            "Y": 1,
+            "Z": 1
           }
         },
-        {
-          "_caras": [
-            {
-              "_vertices": [
-                {
+        "pilar1": {
+          "Caras": {
+            "Frente": {
+              "Vertices": {
+                "pilar1_Frente0": {
                   "PosicionRelativa": {
                     "X": 0,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Frente1": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
                     "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Frente2": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Frente3": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
                     "Z": 0
                   },
                   "Color": {
@@ -127,7 +653,419 @@
                     "Z": 0
                   }
                 },
-                {
+                "pilar1_Frente4": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Frente5": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Frente6": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Frente7": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Izquierda": {
+              "Vertices": {
+                "pilar1_Izquierda0": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Izquierda1": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Izquierda2": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Izquierda3": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Izquierda4": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Izquierda5": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Izquierda6": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Izquierda7": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Atras": {
+              "Vertices": {
+                "pilar1_Atras0": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Atras1": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Atras2": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Atras3": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Atras4": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Atras5": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Atras6": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Atras7": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Derecha": {
+              "Vertices": {
+                "pilar1_Derecha0": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Derecha1": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Derecha2": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Derecha3": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Derecha4": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Derecha5": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Derecha6": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Derecha7": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Arriba": {
+              "Vertices": {
+                "pilar1_Arriba0": {
                   "PosicionRelativa": {
                     "X": 0,
                     "Y": 2,
@@ -139,19 +1077,7 @@
                     "Z": 0
                   }
                 },
-                {
-                  "PosicionRelativa": {
-                    "X": 0,
-                    "Y": 0,
-                    "Z": -0.5
-                  },
-                  "Color": {
-                    "X": 1,
-                    "Y": 0,
-                    "Z": 0
-                  }
-                },
-                {
+                "pilar1_Arriba1": {
                   "PosicionRelativa": {
                     "X": 0,
                     "Y": 2,
@@ -163,11 +1089,23 @@
                     "Z": 1
                   }
                 },
-                {
+                "pilar1_Arriba2": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Arriba3": {
                   "PosicionRelativa": {
                     "X": 0.35,
-                    "Y": 0.35,
-                    "Z": 0
+                    "Y": 2,
+                    "Z": -0.5
                   },
                   "Color": {
                     "X": 1,
@@ -175,7 +1113,19 @@
                     "Z": 0
                   }
                 },
-                {
+                "pilar1_Arriba4": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Arriba5": {
                   "PosicionRelativa": {
                     "X": 0.35,
                     "Y": 2,
@@ -187,71 +1137,77 @@
                     "Z": 1
                   }
                 },
-                {
-                  "PosicionRelativa": {
-                    "X": 0.35,
-                    "Y": 0.35,
-                    "Z": 0
-                  },
-                  "Color": {
-                    "X": 1,
-                    "Y": 0,
-                    "Z": 0
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 0.35,
-                    "Y": 0.35,
-                    "Z": -0.5
-                  },
-                  "Color": {
-                    "X": 1,
-                    "Y": 0,
-                    "Z": 0
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 0.35,
-                    "Y": 0.35,
-                    "Z": -0.5
-                  },
-                  "Color": {
-                    "X": 1,
-                    "Y": 0,
-                    "Z": 0
-                  }
-                },
-                {
+                "pilar1_Arriba6": {
                   "PosicionRelativa": {
                     "X": 0.35,
                     "Y": 2,
-                    "Z": -0.5
+                    "Z": 0
                   },
                   "Color": {
                     "X": 0,
                     "Y": 0,
                     "Z": 1
+                  }
+                },
+                "pilar1_Arriba7": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
                   }
                 }
-              ]
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
             }
-          ],
+          },
           "OrigenRelativo": {
             "X": 0,
             "Y": 0,
             "Z": 0
+          },
+          "Rotacion": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "Posicion": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "Escala": {
+            "X": 1,
+            "Y": 1,
+            "Z": 1
           }
         },
-        {
-          "_caras": [
-            {
-              "_vertices": [
-                {
+        "pilar2": {
+          "Caras": {
+            "Frente": {
+              "Vertices": {
+                "pilar2_Frente0": {
                   "PosicionRelativa": {
-                    "X": 1.5,
-                    "Y": 0,
+                    "X": 1.65,
+                    "Y": 0.5,
                     "Z": 0
                   },
                   "Color": {
@@ -260,9 +1216,33 @@
                     "Z": 0
                   }
                 },
-                {
+                "pilar2_Frente1": {
                   "PosicionRelativa": {
-                    "X": 1.5,
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Frente2": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Frente3": {
+                  "PosicionRelativa": {
+                    "X": 2,
                     "Y": 2,
                     "Z": 0
                   },
@@ -272,11 +1252,23 @@
                     "Z": 0
                   }
                 },
-                {
+                "pilar2_Frente4": {
                   "PosicionRelativa": {
-                    "X": 1.5,
+                    "X": 2,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
                     "Y": 0,
-                    "Z": -0.5
+                    "Z": 0
+                  }
+                },
+                "pilar2_Frente5": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": 0
                   },
                   "Color": {
                     "X": 0,
@@ -284,376 +1276,2391 @@
                     "Z": 1
                   }
                 },
-                {
+                "pilar2_Frente6": {
                   "PosicionRelativa": {
-                    "X": 1.5,
-                    "Y": 2,
-                    "Z": -0.5
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Frente7": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 0.5,
+                    "Z": 0
                   },
                   "Color": {
                     "X": 0,
                     "Y": 1,
                     "Z": 0
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 1.15,
-                    "Y": 0.35,
-                    "Z": 0
-                  },
-                  "Color": {
-                    "X": 1,
-                    "Y": 0,
-                    "Z": 0
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 1.15,
-                    "Y": 2,
-                    "Z": 0
-                  },
-                  "Color": {
-                    "X": 0,
-                    "Y": 0,
-                    "Z": 1
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 1.15,
-                    "Y": 0.35,
-                    "Z": 0
-                  },
-                  "Color": {
-                    "X": 1,
-                    "Y": 0,
-                    "Z": 0
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 1.15,
-                    "Y": 0.35,
-                    "Z": -0.5
-                  },
-                  "Color": {
-                    "X": 1,
-                    "Y": 0,
-                    "Z": 0
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 1.15,
-                    "Y": 0.35,
-                    "Z": -0.5
-                  },
-                  "Color": {
-                    "X": 1,
-                    "Y": 0,
-                    "Z": 0
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 1.15,
-                    "Y": 2,
-                    "Z": -0.5
-                  },
-                  "Color": {
-                    "X": 0,
-                    "Y": 0,
-                    "Z": 1
                   }
                 }
-              ]
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Izquierda": {
+              "Vertices": {
+                "pilar2_Izquierda0": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Izquierda1": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Izquierda2": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Izquierda3": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Izquierda4": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Izquierda5": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Izquierda6": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Izquierda7": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Atras": {
+              "Vertices": {
+                "pilar2_Atras0": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Atras1": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Atras2": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Atras3": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Atras4": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Atras5": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Atras6": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Atras7": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Derecha": {
+              "Vertices": {
+                "pilar2_Derecha0": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Derecha1": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Derecha2": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Derecha3": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Derecha4": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Derecha5": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Derecha6": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Derecha7": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Arriba": {
+              "Vertices": {
+                "pilar2_Arriba0": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Arriba1": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Arriba2": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Arriba3": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Arriba4": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Arriba5": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Arriba6": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Arriba7": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
             }
-          ],
+          },
           "OrigenRelativo": {
             "X": 0,
             "Y": 0,
             "Z": 0
-          }
-        },
-        {
-          "_caras": [
-            {
-              "_vertices": [
-                {
-                  "PosicionRelativa": {
-                    "X": 0.35,
-                    "Y": 0.35,
-                    "Z": 0
-                  },
-                  "Color": {
-                    "X": 1,
-                    "Y": 0,
-                    "Z": 0
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 1.15,
-                    "Y": 0.35,
-                    "Z": 0
-                  },
-                  "Color": {
-                    "X": 1,
-                    "Y": 0,
-                    "Z": 0
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 0.35,
-                    "Y": 0.35,
-                    "Z": -0.5
-                  },
-                  "Color": {
-                    "X": 1,
-                    "Y": 0,
-                    "Z": 0
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 1.15,
-                    "Y": 0.35,
-                    "Z": -0.5
-                  },
-                  "Color": {
-                    "X": 1,
-                    "Y": 0,
-                    "Z": 0
-                  }
-                }
-              ]
-            }
-          ],
-          "OrigenRelativo": {
+          },
+          "Rotacion": {
             "X": 0,
             "Y": 0,
             "Z": 0
-          }
-        },
-        {
-          "_caras": [
-            {
-              "_vertices": [
-                {
-                  "PosicionRelativa": {
-                    "X": 0,
-                    "Y": 2,
-                    "Z": 0
-                  },
-                  "Color": {
-                    "X": 0,
-                    "Y": 1,
-                    "Z": 0
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 0.35,
-                    "Y": 2,
-                    "Z": 0
-                  },
-                  "Color": {
-                    "X": 0,
-                    "Y": 0,
-                    "Z": 1
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 0.35,
-                    "Y": 2,
-                    "Z": 0
-                  },
-                  "Color": {
-                    "X": 0,
-                    "Y": 0,
-                    "Z": 1
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 0.35,
-                    "Y": 2,
-                    "Z": -0.5
-                  },
-                  "Color": {
-                    "X": 0,
-                    "Y": 0,
-                    "Z": 1
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 0.35,
-                    "Y": 2,
-                    "Z": -0.5
-                  },
-                  "Color": {
-                    "X": 0,
-                    "Y": 0,
-                    "Z": 1
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 0,
-                    "Y": 2,
-                    "Z": -0.5
-                  },
-                  "Color": {
-                    "X": 0,
-                    "Y": 0,
-                    "Z": 1
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 0,
-                    "Y": 2,
-                    "Z": -0.5
-                  },
-                  "Color": {
-                    "X": 0,
-                    "Y": 0,
-                    "Z": 1
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 0,
-                    "Y": 2,
-                    "Z": 0
-                  },
-                  "Color": {
-                    "X": 0,
-                    "Y": 1,
-                    "Z": 0
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 1.5,
-                    "Y": 2,
-                    "Z": 0
-                  },
-                  "Color": {
-                    "X": 1,
-                    "Y": 0,
-                    "Z": 0
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 1.5,
-                    "Y": 2,
-                    "Z": -0.5
-                  },
-                  "Color": {
-                    "X": 0,
-                    "Y": 1,
-                    "Z": 0
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 1.5,
-                    "Y": 2,
-                    "Z": -0.5
-                  },
-                  "Color": {
-                    "X": 0,
-                    "Y": 1,
-                    "Z": 0
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 1.15,
-                    "Y": 2,
-                    "Z": -0.5
-                  },
-                  "Color": {
-                    "X": 0,
-                    "Y": 0,
-                    "Z": 1
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 1.15,
-                    "Y": 2,
-                    "Z": -0.5
-                  },
-                  "Color": {
-                    "X": 0,
-                    "Y": 0,
-                    "Z": 1
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 1.15,
-                    "Y": 2,
-                    "Z": 0
-                  },
-                  "Color": {
-                    "X": 1,
-                    "Y": 0.647,
-                    "Z": 0
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 1.15,
-                    "Y": 2,
-                    "Z": 0
-                  },
-                  "Color": {
-                    "X": 1,
-                    "Y": 0.647,
-                    "Z": 0
-                  }
-                },
-                {
-                  "PosicionRelativa": {
-                    "X": 1.5,
-                    "Y": 2,
-                    "Z": 0
-                  },
-                  "Color": {
-                    "X": 1,
-                    "Y": 0,
-                    "Z": 0
-                  }
-                }
-              ]
-            }
-          ],
-          "OrigenRelativo": {
+          },
+          "Posicion": {
             "X": 0,
             "Y": 0,
             "Z": 0
+          },
+          "Escala": {
+            "X": 1,
+            "Y": 1,
+            "Z": 1
           }
         }
-      ],
+      },
       "OrigenRelativo": {
         "X": 0,
         "Y": 0,
         "Z": 0
+      },
+      "Rotacion": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "Posicion": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "Escala": {
+        "X": 1,
+        "Y": 1,
+        "Z": 1
+      }
+    },
+    "U2": {
+      "Partes": {
+        "base": {
+          "Caras": {
+            "Abajo": {
+              "Vertices": {
+                "Abajo0": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Abajo1": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "Abajo2": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "Abajo3": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "Abajo4": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "Abajo5": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Abajo6": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Abajo7": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Izquierda": {
+              "Vertices": {
+                "Izquierda0": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda1": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda2": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda3": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda4": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda5": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda6": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda7": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Frente": {
+              "Vertices": {
+                "Izquierda0": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda1": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda2": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda3": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda4": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda5": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda6": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Izquierda7": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Derecha": {
+              "Vertices": {
+                "Derecha0": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Derecha1": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Derecha2": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Derecha3": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Derecha4": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Derecha5": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Derecha6": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Derecha7": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Atras": {
+              "Vertices": {
+                "Atras0": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Atras1": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Atras2": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Atras3": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Atras4": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Atras5": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Atras6": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "Atras7": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            }
+          },
+          "OrigenRelativo": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "Rotacion": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "Posicion": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "Escala": {
+            "X": 1,
+            "Y": 1,
+            "Z": 1
+          }
+        },
+        "pilar1": {
+          "Caras": {
+            "Frente": {
+              "Vertices": {
+                "pilar1_Frente0": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Frente1": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Frente2": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Frente3": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Frente4": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Frente5": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Frente6": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Frente7": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Izquierda": {
+              "Vertices": {
+                "pilar1_Izquierda0": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Izquierda1": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Izquierda2": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Izquierda3": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Izquierda4": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Izquierda5": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Izquierda6": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Izquierda7": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Atras": {
+              "Vertices": {
+                "pilar1_Atras0": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Atras1": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Atras2": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Atras3": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Atras4": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Atras5": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Atras6": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Atras7": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Derecha": {
+              "Vertices": {
+                "pilar1_Derecha0": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Derecha1": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Derecha2": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Derecha3": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Derecha4": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Derecha5": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Derecha6": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Derecha7": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Arriba": {
+              "Vertices": {
+                "pilar1_Arriba0": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Arriba1": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Arriba2": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Arriba3": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Arriba4": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar1_Arriba5": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Arriba6": {
+                  "PosicionRelativa": {
+                    "X": 0.35,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar1_Arriba7": {
+                  "PosicionRelativa": {
+                    "X": 0,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            }
+          },
+          "OrigenRelativo": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "Rotacion": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "Posicion": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "Escala": {
+            "X": 1,
+            "Y": 1,
+            "Z": 1
+          }
+        },
+        "pilar2": {
+          "Caras": {
+            "Frente": {
+              "Vertices": {
+                "pilar2_Frente0": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Frente1": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Frente2": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Frente3": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Frente4": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Frente5": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Frente6": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Frente7": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Izquierda": {
+              "Vertices": {
+                "pilar2_Izquierda0": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Izquierda1": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Izquierda2": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Izquierda3": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Izquierda4": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Izquierda5": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Izquierda6": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Izquierda7": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Atras": {
+              "Vertices": {
+                "pilar2_Atras0": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Atras1": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Atras2": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Atras3": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Atras4": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Atras5": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Atras6": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Atras7": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Derecha": {
+              "Vertices": {
+                "pilar2_Derecha0": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Derecha1": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Derecha2": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Derecha3": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Derecha4": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Derecha5": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Derecha6": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Derecha7": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 0.5,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            },
+            "Arriba": {
+              "Vertices": {
+                "pilar2_Arriba0": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Arriba1": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Arriba2": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Arriba3": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Arriba4": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": -0.5
+                  },
+                  "Color": {
+                    "X": 1,
+                    "Y": 0,
+                    "Z": 0
+                  }
+                },
+                "pilar2_Arriba5": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Arriba6": {
+                  "PosicionRelativa": {
+                    "X": 2,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 0,
+                    "Z": 1
+                  }
+                },
+                "pilar2_Arriba7": {
+                  "PosicionRelativa": {
+                    "X": 1.65,
+                    "Y": 2,
+                    "Z": 0
+                  },
+                  "Color": {
+                    "X": 0,
+                    "Y": 1,
+                    "Z": 0
+                  }
+                }
+              },
+              "Rotacion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Posicion": {
+                "X": 0,
+                "Y": 0,
+                "Z": 0
+              },
+              "Escala": {
+                "X": 1,
+                "Y": 1,
+                "Z": 1
+              }
+            }
+          },
+          "OrigenRelativo": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "Rotacion": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "Posicion": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "Escala": {
+            "X": 1,
+            "Y": 1,
+            "Z": 1
+          }
+        }
+      },
+      "OrigenRelativo": {
+        "X": 2.5,
+        "Y": 0,
+        "Z": 0
+      },
+      "Rotacion": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "Posicion": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "Escala": {
+        "X": 1,
+        "Y": 1,
+        "Z": 1
       }
     }
-  ],
+  },
   "CentroMasa": {
     "X": 0,
     "Y": 0,
     "Z": 0
+  },
+  "Rotacion": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+  },
+  "Posicion": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+  },
+  "Escala": {
+    "X": 1,
+    "Y": 1,
+    "Z": 1
   }
 }
