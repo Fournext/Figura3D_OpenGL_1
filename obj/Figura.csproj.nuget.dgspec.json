@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sebas\\Desktop\\P-Grafica\\Tarea2\\Figura3D_OpenGL_1\\Figura.csproj": {}
+    "C:\\Users\\sebas\\Desktop\\PR\\PR_Grafica\\Figura3D_OpenGL\\Figura.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sebas\\Desktop\\P-Grafica\\Tarea2\\Figura3D_OpenGL_1\\Figura.csproj": {
+    "C:\\Users\\sebas\\Desktop\\PR\\PR_Grafica\\Figura3D_OpenGL\\Figura.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sebas\\Desktop\\P-Grafica\\Tarea2\\Figura3D_OpenGL_1\\Figura.csproj",
+        "projectUniqueName": "C:\\Users\\sebas\\Desktop\\PR\\PR_Grafica\\Figura3D_OpenGL\\Figura.csproj",
         "projectName": "Figura",
-        "projectPath": "C:\\Users\\sebas\\Desktop\\P-Grafica\\Tarea2\\Figura3D_OpenGL_1\\Figura.csproj",
+        "projectPath": "C:\\Users\\sebas\\Desktop\\PR\\PR_Grafica\\Figura3D_OpenGL\\Figura.csproj",
         "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sebas\\Desktop\\P-Grafica\\Tarea2\\Figura3D_OpenGL_1\\obj\\",
+        "outputPath": "C:\\Users\\sebas\\Desktop\\PR\\PR_Grafica\\Figura3D_OpenGL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sebas\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -44,6 +44,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "ImGui.NET": {
+              "target": "Package",
+              "version": "[1.91.6.1, )"
+            },
+            "Microsoft.Windows.Compatibility": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
             "OpenTK": {
               "target": "Package",
               "version": "[4.9.3, )"
