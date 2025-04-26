@@ -149,63 +149,63 @@ namespace OpenTKCubo3D
         static void Main(string[] args)
         {
             Serializer _serializer = new Serializer();
-            CrearFigura fig = new CrearFigura();
+            // CrearFigura fig = new CrearFigura();
 
 
-            List<Vertice> v1 = new List<Vertice>();
-            List<Vertice> v2 = new List<Vertice>();
-            List<Vertice> v3 = new List<Vertice>();
+            // List<Vertice> v1 = new List<Vertice>();
+            // List<Vertice> v2 = new List<Vertice>();
+            // List<Vertice> v3 = new List<Vertice>();
 
-            v1.Add(new Vertice(-5, 0, 0, 1, 1, 1));
-            v1.Add(new Vertice(5, 0, 0, 1, 1, 1));
-            v2.Add(new Vertice(0, -5, 0, 1, 1, 1));
-            v2.Add(new Vertice(0, 5, 0, 1, 1, 1));
-            v3.Add(new Vertice(0, 0, -5, 1, 1, 1));
-            v3.Add(new Vertice(0, 0, 5, 1, 1, 1));
+            // v1.Add(new Vertice(-5, 0, 0, 1, 1, 1));
+            // v1.Add(new Vertice(5, 0, 0, 1, 1, 1));
+            // v2.Add(new Vertice(0, -5, 0, 1, 1, 1));
+            // v2.Add(new Vertice(0, 5, 0, 1, 1, 1));
+            // v3.Add(new Vertice(0, 0, -5, 1, 1, 1));
+            // v3.Add(new Vertice(0, 0, 5, 1, 1, 1));
 
-            Dictionary<string, Cara> Cara1 = new Dictionary<string, Cara>
-            {
-                { "ejeX", new Cara("ejeX", v1, 0f, 0f, 0f) }
-            };
+            // Dictionary<string, Cara> Cara1 = new Dictionary<string, Cara>
+            // {
+            //     { "ejeX", new Cara("ejeX", v1, 0f, 0f, 0f) }
+            // };
 
-            Dictionary<string, Cara> Cara2 = new Dictionary<string, Cara>
-            {
-                { "ejeY", new Cara("ejeY", v2, 0f, 0f, 0f) }
-            };
+            // Dictionary<string, Cara> Cara2 = new Dictionary<string, Cara>
+            // {
+            //     { "ejeY", new Cara("ejeY", v2, 0f, 0f, 0f) }
+            // };
 
-            Dictionary<string, Cara> Cara3 = new Dictionary<string, Cara>
-            {
-                { "ejeZ", new Cara("ejeZ", v3, 0f, 0f, 0f) }
-            };
+            // Dictionary<string, Cara> Cara3 = new Dictionary<string, Cara>
+            // {
+            //     { "ejeZ", new Cara("ejeZ", v3, 0f, 0f, 0f) }
+            // };
 
-            Dictionary<string, Parte> P1 = new Dictionary<string, Parte>
-            {
-                { "parte_X", new Parte(Cara1, 0f, 0f, 0f) },
-                { "parte_Y", new Parte(Cara2, 0f, 0f, 0f) },
-                { "parte_Z", new Parte(Cara3, 0f, 0f, 0f) }
-            };
+            // Dictionary<string, Parte> P1 = new Dictionary<string, Parte>
+            // {
+            //     { "parte_X", new Parte(Cara1, 0f, 0f, 0f) },
+            //     { "parte_Y", new Parte(Cara2, 0f, 0f, 0f) },
+            //     { "parte_Z", new Parte(Cara3, 0f, 0f, 0f) }
+            // };
 
-            Objeto Ejes = new Objeto(P1, 5f, 2f, 2f);
+            // Objeto Ejes = new Objeto(P1, 5f, 2f, 2f);
 
-            Dictionary<string, Objeto> Dic_objetos = new Dictionary<string, Objeto>();
+            // Dictionary<string, Objeto> Dic_objetos = new Dictionary<string, Objeto>();
 
-            Objeto U1 = fig.CrearFiguraU(5f, 2f, 2f);
-            Objeto U2 = fig.CrearFiguraU(3f, 0f, 0f);
-            Objeto U3 = fig.CrearFiguraU(7f, 0f, 0f);
+            // Objeto U1 = fig.CrearFiguraU(5f, 2f, 2f);
+            // Objeto U2 = fig.CrearFiguraU(3f, 0f, 0f);
+            // Objeto U3 = fig.CrearFiguraU(7f, 0f, 0f);
 
-            Dic_objetos.Add("U1", U1);
-            Dic_objetos.Add("U2", U2);
-            Dic_objetos.Add("U3", U3);
-            Dic_objetos.Add("ejes", Ejes);
+            // Dic_objetos.Add("U1", U1);
+            // Dic_objetos.Add("U2", U2);
+            // Dic_objetos.Add("U3", U3);
+            // Dic_objetos.Add("ejes", Ejes);
 
-            Escenario escenario = new Escenario(Dic_objetos, 0, 0, 0);
+            // Escenario escenario = new Escenario(Dic_objetos, 0, 0, 0);
 
             Escenario escenario2;
 
 
-            _serializer.GuardarAJson(escenario,"escenario.json");
-            //escenario2 = (_serializer.CargarDesdeJson<Escenario>("escenario.json"))!;
-            //escenario2.RecalcularTransformaciones();
+            //_serializer.GuardarAJson(escenario,"escenario.json");
+            escenario2 = (_serializer.CargarDesdeJson<Escenario>("escenario.json"))!;
+            escenario2.RecalcularTransformaciones();
 
             var nativeWindowSettings = new NativeWindowSettings()
             {
@@ -218,7 +218,7 @@ namespace OpenTKCubo3D
             using (var window = new Program(GameWindowSettings.Default, nativeWindowSettings))
             {
 
-                window._escenario = escenario;
+                window._escenario = escenario2;
                 window.Run();
             }
         }

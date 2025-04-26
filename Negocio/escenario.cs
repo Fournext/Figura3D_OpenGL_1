@@ -28,10 +28,7 @@ public class Escenario
         this.esc_X = x;
         this.esc_Y = y;
         this.esc_Z = z;
-        foreach (var obj in this.Objetos.Values)
-        {
-            obj.actualizarCentrosMasas(esc_X, esc_Y, esc_Z);
-        }
+        actualizarCentrosMasas();
     }
 
     public void Inicializar()
@@ -45,6 +42,13 @@ public class Escenario
         foreach (var obj in objetos)
         {
             Objetos.Add(obj.Key, obj.Value);
+        }
+    }
+
+    private void actualizarCentrosMasas(){
+        foreach (var obj in this.Objetos.Values)
+        {
+            obj.actualizarCentrosMasas(esc_X, esc_Y, esc_Z);
         }
     }
 
