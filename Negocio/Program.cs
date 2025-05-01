@@ -11,9 +11,8 @@ namespace OpenTKCubo3D
     {
         private float _cameraAngleY;
         private float _cameraAngleX;
-        private float _cameraAngleZ;
         private float _cameraOffsetZ = 0.0f;
-        private float _cameraDistance = 20.0f;
+        private float _cameraDistance = 30.0f;
         private int _shaderProgram;
         private Matrix4 _view;
         private Matrix4 _projection;
@@ -34,12 +33,14 @@ namespace OpenTKCubo3D
             base.OnLoad();
             GL.ClearColor(0.1f, 0.1f, 0.2f, 1.0f);
             GL.Enable(EnableCap.DepthTest);
+            GL.Disable(EnableCap.CullFace);
+
             _imguiController = new ImGuiController(ClientSize.X, ClientSize.Y);
             _escenario.Inicializar();
             _shaderProgram=shaders.inicializarShader(_shaderProgram);
             
             // Configurar la vista y la proyección
-            _view = Matrix4.LookAt(new Vector3(5, 5, 12), Vector3.Zero, Vector3.UnitY);
+            //_view = Matrix4.LookAt(new Vector3(7, 5, 10), new Vector3(1,1,10), Vector3.UnitY);
             _projection = Matrix4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, Size.X / (float)Size.Y, 0.1f, 100f);
         }
 
@@ -117,6 +118,8 @@ namespace OpenTKCubo3D
         protected override void OnRenderFrame(FrameEventArgs args)
         {
             base.OnRenderFrame(args);
+            GL.Enable(EnableCap.DepthTest);
+            GL.Disable(EnableCap.CullFace);
 
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             GL.UseProgram(_shaderProgram);
@@ -126,10 +129,9 @@ namespace OpenTKCubo3D
                 (float)(Math.Sin(_cameraAngleX)),
                 (float)(Math.Cos(_cameraAngleY) * Math.Cos(_cameraAngleX))
             );
+            
+            Vector3 cameraPos = front * (_cameraDistance + _cameraOffsetZ);
 
-            Vector3 cameraPos = front * _cameraDistance;
-
-            cameraPos.Z += _cameraOffsetZ;  
             _view = Matrix4.LookAt(cameraPos, Vector3.Zero, Vector3.UnitY);
 
             GL.UniformMatrix4(GL.GetUniformLocation(_shaderProgram, "view"), false, ref _view);
@@ -200,6 +202,12 @@ namespace OpenTKCubo3D
 
             // Escenario escenario = new Escenario(Dic_objetos, 0, 0, 0);
 
+            Objeto modeloImportado = LectorModeloObj.ImportarOBJConMaterial("Modelos/CarV2/Chevrolet_Camaro_SS_Low.obj", 0f, 0f, 0f);
+            Dictionary<string, Objeto> Dic_objetos = new Dictionary<string, Objeto>();
+            Dic_objetos.Add("Car",modeloImportado);
+            Escenario escenario = new Escenario(Dic_objetos, 0, 0, 0);
+            //escenario.RecalcularTransformaciones();
+
             Escenario escenario2;
 
 
@@ -218,7 +226,7 @@ namespace OpenTKCubo3D
             using (var window = new Program(GameWindowSettings.Default, nativeWindowSettings))
             {
 
-                window._escenario = escenario2;
+                window._escenario = escenario;
                 window.Run();
             }
         }

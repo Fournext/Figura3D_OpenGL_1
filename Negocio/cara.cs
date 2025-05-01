@@ -139,7 +139,7 @@ public class Cara
         int modelLocation = GL.GetUniformLocation(shaderProgram, "model");
         GL.UniformMatrix4(modelLocation, false, ref _modelo);
 
-        GL.DrawArrays(PrimitiveType.Lines, 0, verticesCombinados.Length / 6);
+        GL.DrawArrays(PrimitiveType.Triangles, 0, verticesCombinados.Length / 6);
         GL.BindVertexArray(0);
     }
 
