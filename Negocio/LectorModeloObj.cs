@@ -13,29 +13,7 @@ public class LectorModeloObj
 
         List<Vector3> posiciones = new();
         Dictionary<string, Vector3> materiales = new();
-
-        Dictionary<string, Dictionary<string, List<Vertice>>> partesPorGrupo = new()
-        {
-            { "chasis", new Dictionary<string, List<Vertice>>() },
-            { "rueda_trasera", new Dictionary<string, List<Vertice>>() },
-            { "rueda_delantera", new Dictionary<string, List<Vertice>>() }
-        };
-
-        HashSet<string> grupos_chasis = new()
-        {
-            "Carroceria_Plano", "Carroceria_2_Plano.003", "Parabrisas_Ad_Plano.005", "Parabrisas_Tr_Plano.015",
-            "Marco_Parabrisad_Ad_Plano.006", "Marco_Parabrisad_Tr_Plano.016", "Ventana_1_Plano.013",
-            "Ventana_2_Plano.010", "Marco_Ventana_2_Plano.012", "Pueratas_Plano.008", "Rejilla_Plano.002",
-            "Plano.002_Plano.019"
-        };
-        HashSet<string> grupos_rueda_trasera = new()
-        {
-            "Ruedas_Tr_Círculo.005", "Rin_1_Tr_Plano.018", "Rin_2_Tr_Círculo.006"
-        };
-        HashSet<string> grupos_rueda_delantera = new()
-        {
-            "Ruedas_Ad_Círculo.004", "Rin_1_Ad_Plano.017", "Rin_2_Ad_Círculo.003"
-        };
+        var partesPorGrupo = new Dictionary<string, List<Vertice>>();
 
         string grupoActual = "default";
         string materialActual = "Material_default";
@@ -62,23 +40,15 @@ public class LectorModeloObj
                 if (string.IsNullOrWhiteSpace(materialActual) || materialActual.ToLower() == "none")
                     materialActual = "Material_default";
             }
-            else if (linea.StartsWith("g ") || linea.StartsWith("o "))
+            else if (linea.StartsWith("o "))
             {
-                grupoActual = linea.Substring(2).Trim();
+                grupoActual = linea.Substring(2).Trim().ToLower(); 
+                if (!partesPorGrupo.ContainsKey(grupoActual))
+                    partesPorGrupo[grupoActual] = new List<Vertice>();
             }
             else if (linea.StartsWith("f "))
             {
                 if (!materiales.ContainsKey(materialActual)) continue;
-
-                string? parte = grupos_chasis.Contains(grupoActual) ? "chasis"
-                            : grupos_rueda_trasera.Contains(grupoActual) ? "rueda_trasera"
-                            : grupos_rueda_delantera.Contains(grupoActual) ? "rueda_delantera"
-                            : null;
-
-                if (parte == null) continue;
-
-                if (!partesPorGrupo[parte].ContainsKey(grupoActual))
-                    partesPorGrupo[parte][grupoActual] = new List<Vertice>();
 
                 var indicesStr = linea.Substring(2).Split(' ', StringSplitOptions.RemoveEmptyEntries);
                 List<int> indices = new();
@@ -92,7 +62,7 @@ public class LectorModeloObj
                 if (indices.Count < 3) continue;
 
                 Vector3 color = materiales[materialActual];
-                var lista = partesPorGrupo[parte][grupoActual];
+                var lista = partesPorGrupo[grupoActual];
 
                 for (int i = 1; i < indices.Count - 1; i++)
                 {
@@ -107,39 +77,13 @@ public class LectorModeloObj
             }
         }
 
-        Dictionary<string, Parte> partes = new();
+        // Crear las partes sin modificar la posición relativa
+        var partes = new Dictionary<string, Parte>();
         foreach (var kv in partesPorGrupo)
         {
-            Dictionary<string, Cara> caras = new();
-            Vector3 acumulado = Vector3.Zero;
-            int total = 0;
-
-            foreach (var cara in kv.Value)
-            {
-                if (cara.Value.Count > 0)
-                {
-                    foreach (var v in cara.Value)
-                    {
-                        acumulado += v.Posicion;
-                        total++;
-                    }
-                }
-            }
-
-            Vector3 centro = total > 0 ? acumulado / total : Vector3.Zero;
-
-            foreach (var cara in kv.Value)
-            {
-                var lista = new List<Vertice>();
-                foreach (var v in cara.Value)
-                {
-                    var pos = v.Posicion - centro;
-                    lista.Add(new Vertice(pos.X, pos.Y, pos.Z, v.Color.X, v.Color.Y, v.Color.Z));
-                }
-                caras[cara.Key] = new Cara(cara.Key, lista, 0f, 0f, 0f);
-            }
-
-            partes[kv.Key] = new Parte(caras, centro.X, centro.Y, centro.Z);
+            var caraUnica = new Dictionary<string, Cara>();
+            caraUnica[kv.Key] = new Cara(kv.Key, kv.Value, 0f, 0f, 0f); 
+            partes[kv.Key] = new Parte(caraUnica, 0f, 0f, 0f);
         }
 
         return new Objeto(partes, posX, posY, posZ);

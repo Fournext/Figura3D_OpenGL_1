@@ -11,12 +11,16 @@ namespace OpenTKCubo3D
     {
         private float _cameraAngleY;
         private float _cameraAngleX;
-        private float _cameraOffsetZ = 0.0f;
-        private float _cameraDistance = 30.0f;
+        private Vector3 _cameraPosition = new Vector3(-20.7f, 20, 60);
+        private Vector3 _cameraFront =  Vector3.UnitY; 
+        private Vector3 _cameraUp = Vector3.UnitY;
+        private float _cameraSpeed = 5.0f;
         private int _shaderProgram;
         private Matrix4 _view;
         private Matrix4 _projection;
         private Escenario _escenario = new Escenario();
+        private AnimacionAuto _animaciones = new AnimacionAuto();
+
         UIEditor uiEditor = new UIEditor();
         private ImGuiController _imguiController;
         private Shaders shaders = new Shaders();
@@ -38,6 +42,8 @@ namespace OpenTKCubo3D
             _imguiController = new ImGuiController(ClientSize.X, ClientSize.Y);
             _escenario.Inicializar();
             _shaderProgram=shaders.inicializarShader(_shaderProgram);
+
+            
             
             // Configurar la vista y la proyección
             //_view = Matrix4.LookAt(new Vector3(7, 5, 10), new Vector3(1,1,10), Vector3.UnitY);
@@ -103,15 +109,38 @@ namespace OpenTKCubo3D
                         else if (tipo == 2) parte.Escalacion(1 + valor.Y * 0.05f);
                     }
                 }
-            }else if(_escenario != null && !KeyboardState.IsKeyDown(Keys.LeftShift)){
-                float rotationSpeed = 0.002f;
+            }else if (_escenario != null && !KeyboardState.IsKeyDown(Keys.LeftShift))
+            {
+                float speed = _cameraSpeed * (float)args.Time;
+
+                if (input.IsKeyDown(Keys.W)) _cameraPosition += _cameraFront * speed;
+                if (input.IsKeyDown(Keys.S)) _cameraPosition -= _cameraFront * speed;
+                if (input.IsKeyDown(Keys.A)) _cameraPosition -= Vector3.Normalize(Vector3.Cross(_cameraFront, _cameraUp)) * speed;
+                if (input.IsKeyDown(Keys.D)) _cameraPosition += Vector3.Normalize(Vector3.Cross(_cameraFront, _cameraUp)) * speed;
+                if (input.IsKeyDown(Keys.Q)) _cameraPosition += _cameraUp * speed;
+                if (input.IsKeyDown(Keys.E)) _cameraPosition -= _cameraUp * speed;
+
+                float rotationSpeed = 1.5f * (float)args.Time;
+
                 if (input.IsKeyDown(Keys.Left)) _cameraAngleY += rotationSpeed;
                 if (input.IsKeyDown(Keys.Right)) _cameraAngleY -= rotationSpeed;
                 if (input.IsKeyDown(Keys.Up)) _cameraAngleX -= rotationSpeed;
                 if (input.IsKeyDown(Keys.Down)) _cameraAngleX += rotationSpeed;
-                if (input.IsKeyDown(Keys.Q)) _cameraOffsetZ += 0.05f;
-                if (input.IsKeyDown(Keys.E)) _cameraOffsetZ -= 0.05f;
+
+                // Calcular nueva dirección de cámara
+                _cameraFront = new Vector3(
+                    (float)(Math.Cos(_cameraAngleX) * Math.Sin(_cameraAngleY)),
+                    (float)Math.Sin(_cameraAngleX),
+                    (float)(Math.Cos(_cameraAngleX) * Math.Cos(_cameraAngleY))
+                ).Normalized();
             }
+ 
+            
+            if(_escenario!=null && KeyboardState.IsKeyDown(Keys.F)){
+                _animaciones.CargarObj_Dist(_escenario.Objetos["Car"]);
+                _animaciones.Animar();
+            }
+            
         }
 
 
@@ -124,20 +153,12 @@ namespace OpenTKCubo3D
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             GL.UseProgram(_shaderProgram);
 
-            Vector3 front = new Vector3(
-                (float)(Math.Sin(_cameraAngleY) * Math.Cos(_cameraAngleX)),
-                (float)(Math.Sin(_cameraAngleX)),
-                (float)(Math.Cos(_cameraAngleY) * Math.Cos(_cameraAngleX))
-            );
-            
-            Vector3 cameraPos = front * (_cameraDistance + _cameraOffsetZ);
-
-            _view = Matrix4.LookAt(cameraPos, Vector3.Zero, Vector3.UnitY);
+            _view = Matrix4.LookAt(_cameraPosition, _cameraPosition + _cameraFront, _cameraUp);
 
             GL.UniformMatrix4(GL.GetUniformLocation(_shaderProgram, "view"), false, ref _view);
             GL.UniformMatrix4(GL.GetUniformLocation(_shaderProgram, "projection"), false, ref _projection);
 
-            _escenario.Dibujar(_shaderProgram);
+            _escenario.Dibujar(_shaderProgram,Matrix4.Identity);
 
             _imguiController.Update(this, (float)args.Time);
             uiEditor.Dibujar(_escenario!);
@@ -202,18 +223,22 @@ namespace OpenTKCubo3D
 
             // Escenario escenario = new Escenario(Dic_objetos, 0, 0, 0);
 
-            Objeto modeloImportado = LectorModeloObj.ImportarOBJConMaterial("Modelos/CarV2/Chevrolet_Camaro_SS_Low.obj", 0f, 0f, 0f);
-            Dictionary<string, Objeto> Dic_objetos = new Dictionary<string, Objeto>();
-            Dic_objetos.Add("Car",modeloImportado);
-            Escenario escenario = new Escenario(Dic_objetos, 0, 0, 0);
-            //escenario.RecalcularTransformaciones();
+            Objeto AutoImportado = LectorModeloObj.ImportarOBJConMaterial("Modelos/CarV5/Chebroletobj.obj",-20.7f,4.3f,40);
+            Objeto Carretera = LectorModeloObj.ImportarOBJConMaterial("Modelos/CarV5/Carretera.obj",0,0,0);
+            Dictionary<string, Objeto> Dic_objetos = new Dictionary<string, Objeto>
+            {
+                { "Car", AutoImportado },
+                { "Carretera", Carretera }
+            };
+            Escenario escenario = new Escenario(Dic_objetos, 0, -5, 0);
+            escenario.Objetos["Carretera"].Escalacion(5);
+            escenario.Objetos["Car"].Rotacion(0,180,0);
 
             Escenario escenario2;
 
 
             //_serializer.GuardarAJson(escenario,"escenario.json");
             escenario2 = (_serializer.CargarDesdeJson<Escenario>("escenario.json"))!;
-            escenario2.RecalcularTransformaciones();
 
             var nativeWindowSettings = new NativeWindowSettings()
             {

@@ -1,4 +1,6 @@
 using System.Text.Json.Serialization;
+using OpenTK.Mathematics;
+using OpenTKCubo3D;
 
 public class Parte
 {
@@ -14,6 +16,10 @@ public class Parte
     [JsonPropertyName("z")]
     public float parte_Z { get; set; }
 
+    [JsonIgnore]
+    public Vector3 centroDeMasa { get; set; }
+    [JsonIgnore]
+    public Transformaciones Transform { get; } = new Transformaciones();
     public Parte()
     {
         DicCaras = new Dictionary<string, Cara>();
@@ -26,6 +32,7 @@ public class Parte
         this.parte_X = x;
         this.parte_Y = y;
         this.parte_Z = z;
+        centroDeMasa = CalcularCentro();
     }
 
     public void Inicializar()
@@ -44,50 +51,43 @@ public class Parte
 
     public void Rotacion(float grado_X,float grado_Y,float grado_Z)
     {
-        foreach (var cara in DicCaras.Values)
-        {
-            cara.Rotacion(grado_X, grado_Y, grado_Z);
-        }
+        Transform.RotateA(centroDeMasa, grado_X, grado_Y, grado_Z);
     }
 
     public void Escalacion(float N)
     {
-        foreach (var cara in DicCaras.Values)
-        {
-            cara.Escalacion(N);
-        }
+        Transform.Posicion -= centroDeMasa;
+        Transform.Escalate(N);
+        Transform.Posicion += centroDeMasa;
     }
 
     public void Traslacion(float x, float y, float z)
     {
-        foreach (var cara in DicCaras.Values)
-        {
-            cara.Traslacion(x, y, z);
-        }
+        Transform.Transladate(x, y, z);
     }
-    public void actualizarCentrosMasas(float x, float y, float z)
-    {
-        this.parte_X += x;
-        this.parte_Y += y;
-        this.parte_Z += z;
-        foreach (var cara in DicCaras.Values)
-        {
-            cara.actualizarCentrosMasas(parte_X, parte_Y, parte_Z);
-        }
-    }  
 
-    public void RecalcularTransformaciones()
-    {
-        foreach (var cara in DicCaras.Values)
+    public Vector3 CalcularCentro(){
+        var _vertices = DicCaras.Values.SelectMany(c => c._vertices.Values);
+        List<Vertice> todosvrt = new List<Vertice>();
+        foreach (var lista in _vertices)
         {
-            cara.RecalcularTransformaciones();
+            todosvrt.AddRange(lista);
         }
+        return Vertice.CalcularCentro(todosvrt);
     }
-  
 
-    public void Dibujar(int shaderProgram)
-    {
+    public void RecalcualarCentro(){
+        centroDeMasa = CalcularCentro();
         foreach (var cara in DicCaras.Values)
-            cara.Dibujar(shaderProgram);
+                cara.RecalcualarCentro();
+    }
+    
+
+    public void Dibujar(int shaderProgram,Matrix4 matrizPadre)
+    {
+         Matrix4 matrizLocal = Transform.GetMatrix(centroDeMasa);
+        Matrix4 matrizAcumulada = matrizLocal * matrizPadre;
+        foreach (var cara in DicCaras.Values)
+            cara.Dibujar(shaderProgram,matrizAcumulada);
     }
 }
