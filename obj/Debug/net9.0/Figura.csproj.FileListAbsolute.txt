@@ -588,6 +588,8 @@ C:\Users\sebas\Desktop\P-Grafica\Figura3D_OpenGL\obj\Debug\net9.0\refint\Figura.
 C:\Users\sebas\Desktop\P-Grafica\Figura3D_OpenGL\obj\Debug\net9.0\Figura.pdb
 C:\Users\sebas\Desktop\P-Grafica\Figura3D_OpenGL\obj\Debug\net9.0\Figura.genruntimeconfig.cache
 C:\Users\sebas\Desktop\P-Grafica\Figura3D_OpenGL\obj\Debug\net9.0\ref\Figura.dll
-c:\Users\sebas\Desktop\P-Grafica\Figura3D_OpenGL\bin\Debug\net9.0\Modelos\CarV2\Chevrolet_Camaro_SS_Low.mtl
-c:\Users\sebas\Desktop\P-Grafica\Figura3D_OpenGL\bin\Debug\net9.0\Modelos\CarV2\Chevrolet_Camaro_SS_Low.obj
 c:\Users\sebas\Desktop\P-Grafica\Figura3D_OpenGL\bin\Debug\net9.0\escenario.json
+c:\Users\sebas\Desktop\P-Grafica\Figura3D_OpenGL\bin\Debug\net9.0\Modelos\CarV5\Chebroletobj.mtl
+c:\Users\sebas\Desktop\P-Grafica\Figura3D_OpenGL\bin\Debug\net9.0\Modelos\CarV5\Chebroletobj.obj
+c:\Users\sebas\Desktop\P-Grafica\Figura3D_OpenGL\bin\Debug\net9.0\Modelos\CarV5\Carretera.mtl
+c:\Users\sebas\Desktop\P-Grafica\Figura3D_OpenGL\bin\Debug\net9.0\Modelos\CarV5\Carretera.obj

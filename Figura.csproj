@@ -14,10 +14,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Modelos\CarV2\Chevrolet_Camaro_SS_Low.obj">
+    <None Update="Modelos\CarV5\Chebroletobj.obj">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modelos\CarV2\Chevrolet_Camaro_SS_Low.mtl">
+    <None Update="Modelos\CarV5\Chebroletobj.mtl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Modelos\CarV5\Carretera.obj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modelos\CarV5\Carretera.mtl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

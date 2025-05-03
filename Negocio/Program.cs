@@ -14,7 +14,7 @@ namespace OpenTKCubo3D
         private Vector3 _cameraPosition = new Vector3(-20.7f, 20, 60);
         private Vector3 _cameraFront =  Vector3.UnitY; 
         private Vector3 _cameraUp = Vector3.UnitY;
-        private float _cameraSpeed = 5.0f;
+        private float _cameraSpeed = 10.0f;
         private int _shaderProgram;
         private Matrix4 _view;
         private Matrix4 _projection;
@@ -43,11 +43,11 @@ namespace OpenTKCubo3D
             _escenario.Inicializar();
             _shaderProgram=shaders.inicializarShader(_shaderProgram);
 
-            
-            
-            // Configurar la vista y la proyección
-            //_view = Matrix4.LookAt(new Vector3(7, 5, 10), new Vector3(1,1,10), Vector3.UnitY);
+            if(_escenario!=null){
+                _animaciones.CargarObj_Dist(_escenario.Objetos["Car"]);
+            }
             _projection = Matrix4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, Size.X / (float)Size.Y, 0.1f, 100f);
+
         }
 
         protected override void OnResize(ResizeEventArgs e)
@@ -137,7 +137,6 @@ namespace OpenTKCubo3D
  
             
             if(_escenario!=null && KeyboardState.IsKeyDown(Keys.F)){
-                _animaciones.CargarObj_Dist(_escenario.Objetos["Car"]);
                 _animaciones.Animar();
             }
             
