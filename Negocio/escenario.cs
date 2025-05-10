@@ -52,6 +52,18 @@ public class Escenario
         }
     }
 
+    public Escenario Clonar()
+    {
+        var objetosClonados = new Dictionary<string, Objeto>();
+        foreach (var kv in Objetos)
+        {
+            objetosClonados[kv.Key] = kv.Value.Clonar();
+        }
+
+        return new Escenario(objetosClonados, esc_X, esc_Y, esc_Z);
+    }
+
+
     public Vector3 CalcularCentro(){
         var _vertices = Objetos.Values.SelectMany(obj => obj.Partes.Values.SelectMany(p => p.DicCaras.Values.SelectMany(c => c._vertices.Values)));
         List<Vertice> todosvrt = new List<Vertice>();

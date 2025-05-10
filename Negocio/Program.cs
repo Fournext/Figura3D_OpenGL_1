@@ -7,7 +7,7 @@ using OpenTK.Windowing.GraphicsLibraryFramework;
 
 namespace OpenTKCubo3D
 {
-    class Program : GameWindow
+    public class Program : GameWindow
     {
         private float _cameraAngleY;
         private float _cameraAngleX;
@@ -19,8 +19,7 @@ namespace OpenTKCubo3D
         private Matrix4 _view;
         private Matrix4 _projection;
         private Escenario _escenario = new Escenario();
-        private AnimacionAuto _animaciones = new AnimacionAuto();
-
+        private LibretoAnimacion _libreto;
         UIEditor uiEditor = new UIEditor();
         private ImGuiController _imguiController;
         private Shaders shaders = new Shaders();
@@ -43,11 +42,29 @@ namespace OpenTKCubo3D
             _escenario.Inicializar();
             _shaderProgram=shaders.inicializarShader(_shaderProgram);
 
-            if(_escenario!=null){
-                _animaciones.CargarObj_Dist(_escenario.Objetos["Car"]);
-            }
             _projection = Matrix4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, Size.X / (float)Size.Y, 0.1f, 100f);
 
+            Serializer serializer = new Serializer();    
+            //_libreto?.Detener();
+
+            //_libreto = new LibretoAnimacion(_escenario);
+
+            // _libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Trasladar, 5f, 0, 0, 0f, 5f));
+            // _libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Rotar, 0, 1f, 0, 0f, 3f));
+            
+            
+            //serializer.GuardarAJson(_libreto, "Negocio/Animacion/libreto.json");
+            // if (!_libreto.EstaActivo){
+            //     _libreto.Iniciar();
+            // }
+
+            var libretoCargado = serializer.CargarDesdeJson<LibretoAnimacion>("Negocio/Animacion/libreto.json");
+            libretoCargado?.Detener();
+            if(libretoCargado != null){
+                libretoCargado.CargarEscenario(_escenario);
+                libretoCargado.InicializarColaDesdeJSON();
+                libretoCargado.Iniciar();
+            }
         }
 
         protected override void OnResize(ResizeEventArgs e)
@@ -133,11 +150,6 @@ namespace OpenTKCubo3D
                     (float)Math.Sin(_cameraAngleX),
                     (float)(Math.Cos(_cameraAngleX) * Math.Cos(_cameraAngleY))
                 ).Normalized();
-            }
- 
-            
-            if(_escenario!=null && KeyboardState.IsKeyDown(Keys.F)){
-                _animaciones.Animar();
             }
             
         }

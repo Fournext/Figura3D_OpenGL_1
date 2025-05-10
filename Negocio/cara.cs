@@ -111,6 +111,23 @@ public class Cara
         centroDeMasa = CalcularCentro();
     }
 
+    public Cara Clonar()
+    {
+        var copiaVertices = new Dictionary<string, List<Vertice>>();
+        foreach (var kv in _vertices)
+        {
+            copiaVertices[kv.Key] = kv.Value.Select(v => v.Clonar()).ToList();
+        }
+
+        var clon = new Cara();
+        clon._vertices = copiaVertices;
+        clon.cara_X = cara_X;
+        clon.cara_Y = cara_Y;
+        clon.cara_Z = cara_Z;
+        clon.RecalcualarCentro(); // opcional
+
+        return clon;
+    }
 
     public void Dibujar(int shaderProgram,Matrix4 matrizAcumulada)
     {

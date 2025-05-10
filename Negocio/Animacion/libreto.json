@@ -1,0 +1,22 @@
+{
+  "Instrucciones": [
+    {
+      "NombreObjeto": "Car",
+      "Tipo": 2,
+      "X": 5,
+      "Y": 0,
+      "Z": 0,
+      "TiempoInicio": 0,
+      "TiempoFin": 5
+    },
+    {
+      "NombreObjeto": "Car",
+      "Tipo": 0,
+      "X": 0,
+      "Y": 1,
+      "Z": 0,
+      "TiempoInicio": 0,
+      "TiempoFin": 3
+    }
+  ]
+}

@@ -49,6 +49,19 @@ public class Parte
         }
     }
 
+    public Parte Clonar()
+    {
+        var carasClonadas = new Dictionary<string, Cara>();
+        foreach (var kv in DicCaras)
+        {
+            carasClonadas[kv.Key] = kv.Value.Clonar();
+        }
+
+        var clon = new Parte(carasClonadas, parte_X, parte_Y, parte_Z);
+        return clon;
+    }
+
+
     public void Rotacion(float grado_X,float grado_Y,float grado_Z)
     {
         Transform.RotateA(centroDeMasa, grado_X, grado_Y, grado_Z);

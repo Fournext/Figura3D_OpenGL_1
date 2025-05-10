@@ -16,6 +16,12 @@ public class Vertice
         Color = new Vector3(r, g, b);
     }
 
+    public Vertice Clonar()
+    {
+        return new Vertice(Posicion.X, Posicion.Y, Posicion.Z, Color.X, Color.Y, Color.Z);
+    }
+
+
     public static Vector3 CalcularCentro(List<Vertice> vert)
     {
         float minX = float.MaxValue, maxX = float.MinValue;

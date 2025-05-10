@@ -52,6 +52,19 @@ public class Objeto
         }
     }
 
+    public Objeto Clonar()
+    {
+        var partesClonadas = new Dictionary<string, Parte>();
+        foreach (var kv in Partes)
+        {
+            partesClonadas[kv.Key] = kv.Value.Clonar();
+        }
+
+        var clon = new Objeto(partesClonadas, part_X, part_Y, part_Z);
+        return clon;
+    }
+
+
     public Vector3 CalcularCentro(){
         var _vertices = Partes.Values.SelectMany(p => p.DicCaras.Values.SelectMany(c => c._vertices.Values));
         List<Vertice> todosvrt = new List<Vertice>();
