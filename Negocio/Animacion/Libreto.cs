@@ -1,18 +1,18 @@
-using System.Diagnostics;
 using System.Text.Json.Serialization;
 using OpenTK.Mathematics;
 
 public class LibretoAnimacion
 {
     [JsonIgnore] private Escenario escenario;
-    [JsonIgnore] private Queue<InstruccionAnimacion> colaInstrucciones = new();
-    [JsonInclude] public List<InstruccionAnimacion> Instrucciones { get; private set; } = new(); // Para serializar
+    [JsonInclude] public List<InstruccionAnimacion> Instrucciones { get; private set; } = new();
     [JsonIgnore] private Thread? hiloAnimacion;
     [JsonIgnore] private bool activo;
-    [JsonIgnore] private Stopwatch reloj;
-    [JsonIgnore] private bool loop;
 
-     public LibretoAnimacion() {}
+    [JsonIgnore] public float TiempoGlobal { get; set; } = 0f; // Lo setea Program.cs cada frame
+
+    [JsonIgnore] private Dictionary<InstruccionAnimacion, float> progresoAnterior = new();
+
+    public LibretoAnimacion() { }
     public LibretoAnimacion(Escenario escenario)
     {
         this.escenario = escenario;
@@ -20,13 +20,7 @@ public class LibretoAnimacion
 
     public void AgregarInstruccion(InstruccionAnimacion instruccion)
     {
-        colaInstrucciones.Enqueue(instruccion);
         Instrucciones.Add(instruccion);
-    }
-
-    public void InicializarColaDesdeJSON()
-    {
-        colaInstrucciones = new Queue<InstruccionAnimacion>(Instrucciones);
     }
 
     public void CargarEscenario(Escenario escenario)
@@ -36,84 +30,68 @@ public class LibretoAnimacion
 
     public void Iniciar()
     {
-        if (activo || colaInstrucciones.Count == 0)
+        if (activo || Instrucciones.Count == 0)
             return;
 
         activo = true;
-        reloj = new Stopwatch();
-        reloj.Start();
+
+        progresoAnterior.Clear(); // Limpieza garantizada
+        foreach (var inst in Instrucciones)
+        {
+            progresoAnterior[inst] = 0f;
+        }
 
         hiloAnimacion = new Thread(() =>
         {
-            try
+            while (activo)
             {
-
-                while (activo && colaInstrucciones.Count > 0)
+                foreach (var inst in Instrucciones)
                 {
-                    var inst = colaInstrucciones.Peek();
-                    float duracion = inst.TiempoFin - inst.TiempoInicio;
-                    float tiempoInicio = reloj.ElapsedMilliseconds / 1000f;
-
                     if (!escenario.Objetos.TryGetValue(inst.NombreObjeto, out var obj))
-                        break;
+                        continue;
 
-                    Vector3 origen = Vector3.Zero;
-                    Vector3 destino = Vector3.Zero;
-                    Vector3 acumulado = Vector3.Zero; // Para Rotacion
+                    if (TiempoGlobal < inst.TiempoInicio)
+                        continue;
+
+                    float tiempoDesdeInicio = TiempoGlobal - inst.TiempoInicio;
+                    float tActual = tiempoDesdeInicio / inst.TiempoFin;
+                    tActual = Math.Clamp(tActual, 0f, 1f);
+
+                    if (!progresoAnterior.TryGetValue(inst, out float tAnterior))
+                        tAnterior = 0f; // Seguridad extrema adicional por si acaso
+
+                    float deltaT = tActual - tAnterior;
+
+                    if (deltaT <= 0f)
+                        continue;
 
                     switch (inst.Tipo)
                     {
                         case TipoTransformacion.Trasladar:
-                            origen = obj.Transform.Posicion;
-                            destino = origen + new Vector3(inst.X, inst.Y, inst.Z);
+                            Vector3 desplazamientoTotal = new Vector3(inst.X, inst.Y, inst.Z);
+                            Vector3 deltaDesplazamiento = desplazamientoTotal * deltaT;
+                            obj.Transform.Transladate(deltaDesplazamiento.X, deltaDesplazamiento.Y, deltaDesplazamiento.Z);
                             break;
+
                         case TipoTransformacion.Escalar:
-                            origen = new Vector3(1);
-                            destino = new Vector3(inst.X);
+                            float escalaDestino = inst.X;
+                            float escalaAnterior = MathHelper.Lerp(1f, escalaDestino, tAnterior);
+                            float escalaActual = MathHelper.Lerp(1f, escalaDestino, tActual);
+                            float escalaDelta = escalaActual / escalaAnterior;
+                            obj.Transform.Escalate(escalaDelta);
                             break;
+
                         case TipoTransformacion.Rotar:
-                            destino = new Vector3(inst.X, inst.Y, inst.Z);
+                            Vector3 rotTotal = new Vector3(inst.X, inst.Y, inst.Z);
+                            Vector3 deltaRot = rotTotal * deltaT;
+                            obj.Transform.Rotate(deltaRot.X, deltaRot.Y, deltaRot.Z);
                             break;
                     }
 
-                    while (activo)
-                    {
-                        float tiempoActual = reloj.ElapsedMilliseconds / 1000f;
-                        float t = (tiempoActual - tiempoInicio) / duracion;
-                        t = Math.Clamp(t, 0f, 1f);
-
-                        Vector3 valorInterpolado = Vector3.Lerp(origen, destino, t);
-
-                        switch (inst.Tipo)
-                        {
-                            case TipoTransformacion.Trasladar:
-                                var deltaT = valorInterpolado - obj.Transform.Posicion;
-                                obj.Traslacion(deltaT.X, deltaT.Y, deltaT.Z);
-                                break;
-                            case TipoTransformacion.Escalar:
-                                float escalaActual = obj.Transform.Escala.X;
-                                float escalaDestino = valorInterpolado.X;
-                                float factorEscala = escalaDestino / escalaActual;
-                                obj.Escalacion(factorEscala);
-                                break;
-                            case TipoTransformacion.Rotar:
-                                var deltaR = valorInterpolado - acumulado;
-                                obj.Rotacion(deltaR.X, deltaR.Y, deltaR.Z);
-                                acumulado = valorInterpolado;
-                                break;
-                        }
-
-                        if (t >= 1f) break;
-                        Thread.Sleep(16);
-                    }
-
-                    colaInstrucciones.Dequeue();
+                    progresoAnterior[inst] = tActual;
                 }
-            }
-            finally
-            {
-                activo = false;
-                reloj.Stop();
+
+                Thread.Sleep(1);
             }
         });
 
@@ -124,11 +102,9 @@ public class LibretoAnimacion
     public void Detener()
     {
         if (!activo) return;
-
         activo = false;
         hiloAnimacion?.Join();
         hiloAnimacion = null;
-        reloj?.Stop();
     }
 
     [JsonIgnore] public bool EstaActivo => activo;

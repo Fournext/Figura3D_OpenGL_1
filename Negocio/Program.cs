@@ -11,7 +11,7 @@ namespace OpenTKCubo3D
     {
         private float _cameraAngleY;
         private float _cameraAngleX;
-        private Vector3 _cameraPosition = new Vector3(-20.7f, 20, 60);
+        private Vector3 _cameraPosition = new Vector3(-0f, 20, -50f);
         private Vector3 _cameraFront =  Vector3.UnitY; 
         private Vector3 _cameraUp = Vector3.UnitY;
         private float _cameraSpeed = 10.0f;
@@ -19,7 +19,7 @@ namespace OpenTKCubo3D
         private Matrix4 _view;
         private Matrix4 _projection;
         private Escenario _escenario = new Escenario();
-        private LibretoAnimacion _libreto;
+        private LibretoAnimacion libreto;
         UIEditor uiEditor = new UIEditor();
         private ImGuiController _imguiController;
         private Shaders shaders = new Shaders();
@@ -43,27 +43,11 @@ namespace OpenTKCubo3D
             _shaderProgram=shaders.inicializarShader(_shaderProgram);
 
             _projection = Matrix4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, Size.X / (float)Size.Y, 0.1f, 100f);
-
-            Serializer serializer = new Serializer();    
-            //_libreto?.Detener();
-
-            //_libreto = new LibretoAnimacion(_escenario);
-
-            // _libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Trasladar, 5f, 0, 0, 0f, 5f));
-            // _libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Rotar, 0, 1f, 0, 0f, 3f));
-            
-            
-            //serializer.GuardarAJson(_libreto, "Negocio/Animacion/libreto.json");
-            // if (!_libreto.EstaActivo){
-            //     _libreto.Iniciar();
-            // }
-
-            var libretoCargado = serializer.CargarDesdeJson<LibretoAnimacion>("Negocio/Animacion/libreto.json");
-            libretoCargado?.Detener();
-            if(libretoCargado != null){
-                libretoCargado.CargarEscenario(_escenario);
-                libretoCargado.InicializarColaDesdeJSON();
-                libretoCargado.Iniciar();
+   
+            this.libreto?.Detener();
+            if(libreto != null){
+                libreto.CargarEscenario(_escenario);
+                libreto.Iniciar();
             }
         }
 
@@ -78,6 +62,13 @@ namespace OpenTKCubo3D
         {
             base.OnUpdateFrame(args);
             var input = KeyboardState;
+
+            base.OnUpdateFrame(args);
+
+            if (libreto.EstaActivo)
+            {
+                libreto.TiempoGlobal += (float)args.Time;
+            }
 
             if (input.IsKeyDown(Keys.Escape)) Close();
 
@@ -245,11 +236,54 @@ namespace OpenTKCubo3D
             escenario.Objetos["Carretera"].Escalacion(5);
             escenario.Objetos["Car"].Rotacion(0,180,0);
 
-            Escenario escenario2;
-
+            //Escenario escenario2;
 
             //_serializer.GuardarAJson(escenario,"escenario.json");
-            escenario2 = (_serializer.CargarDesdeJson<Escenario>("escenario.json"))!;
+            //escenario2 = (_serializer.CargarDesdeJson<Escenario>("escenario.json"))!;
+
+            LibretoAnimacion libreto;
+            libreto = new LibretoAnimacion(escenario);
+            // Ir recto 0-5
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Trasladar, 0f, 0, -60f, 0f, 5f)); //0-5
+            
+            // Ir a la derecha 5-10
+
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Trasladar, 3f, 0, -18f, 5f, 1.75f)); 
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Trasladar, 7f, 0, -9f, 6.75f, 1.33f)); 
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Trasladar, 11f, 0, -6f, 8.08f, 1.42f)); 
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Trasladar, 9f, 0, -1f, 9.5f, 1f)); 
+
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Trasladar, 9f, 0, 1f, 10.5f, 1f)); 
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Trasladar, 11f, 0, 6f, 11.5f, 1.42f)); 
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Trasladar, 7f, 0, 9f, 12.92f, 1.33f)); 
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Trasladar, 3f, 0, 18f, 14.25f, 1.75f)); 
+
+            
+            
+            
+             // rotar 
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Rotar, 0, -28f, 0, 5f, 1.75f));
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Rotar, 0, -25f, 0, 6.75f, 1.33f));
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Rotar, 0, -25f, 0, 8.08f, 1.42f));
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Rotar, 0, -12f, 0, 9.5f, 1f));
+
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Rotar, 0, -12f, 0, 10.5f, 1f));
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Rotar, 0, -25f, 0, 11.5f, 1.42f));
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Rotar, 0, -25f, 0, 12.92f, 1.33f));
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Rotar, 0, -28f, 0, 14.25f, 1.75f));
+
+
+
+
+            // Ir abajo 10-15
+            libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Trasladar, 0f, 0, 60f, 16f, 5f));
+
+            
+            
+            _serializer.GuardarAJson(libreto, "Negocio/Animacion/libreto.json");
+
+            //libreto = _serializer.CargarDesdeJson<LibretoAnimacion>("Negocio/Animacion/libreto.json")!;
+
 
             var nativeWindowSettings = new NativeWindowSettings()
             {
@@ -263,6 +297,7 @@ namespace OpenTKCubo3D
             {
 
                 window._escenario = escenario;
+                window.libreto = libreto;
                 window.Run();
             }
         }

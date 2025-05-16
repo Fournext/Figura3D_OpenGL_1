@@ -3,20 +3,164 @@
     {
       "NombreObjeto": "Car",
       "Tipo": 2,
-      "X": 5,
+      "X": 0,
       "Y": 0,
-      "Z": 0,
+      "Z": -60,
       "TiempoInicio": 0,
       "TiempoFin": 5
     },
     {
       "NombreObjeto": "Car",
+      "Tipo": 2,
+      "X": 3,
+      "Y": 0,
+      "Z": -18,
+      "TiempoInicio": 5,
+      "TiempoFin": 1.75
+    },
+    {
+      "NombreObjeto": "Car",
+      "Tipo": 2,
+      "X": 7,
+      "Y": 0,
+      "Z": -9,
+      "TiempoInicio": 6.75,
+      "TiempoFin": 1.33
+    },
+    {
+      "NombreObjeto": "Car",
+      "Tipo": 2,
+      "X": 11,
+      "Y": 0,
+      "Z": -6,
+      "TiempoInicio": 8.08,
+      "TiempoFin": 1.42
+    },
+    {
+      "NombreObjeto": "Car",
+      "Tipo": 2,
+      "X": 9,
+      "Y": 0,
+      "Z": -1,
+      "TiempoInicio": 9.5,
+      "TiempoFin": 1
+    },
+    {
+      "NombreObjeto": "Car",
+      "Tipo": 2,
+      "X": 9,
+      "Y": 0,
+      "Z": 1,
+      "TiempoInicio": 10.5,
+      "TiempoFin": 1
+    },
+    {
+      "NombreObjeto": "Car",
+      "Tipo": 2,
+      "X": 11,
+      "Y": 0,
+      "Z": 6,
+      "TiempoInicio": 11.5,
+      "TiempoFin": 1.42
+    },
+    {
+      "NombreObjeto": "Car",
+      "Tipo": 2,
+      "X": 7,
+      "Y": 0,
+      "Z": 9,
+      "TiempoInicio": 12.92,
+      "TiempoFin": 1.33
+    },
+    {
+      "NombreObjeto": "Car",
+      "Tipo": 2,
+      "X": 3,
+      "Y": 0,
+      "Z": 18,
+      "TiempoInicio": 14.25,
+      "TiempoFin": 1.75
+    },
+    {
+      "NombreObjeto": "Car",
       "Tipo": 0,
       "X": 0,
-      "Y": 1,
+      "Y": -28,
       "Z": 0,
-      "TiempoInicio": 0,
-      "TiempoFin": 3
+      "TiempoInicio": 5,
+      "TiempoFin": 1.75
+    },
+    {
+      "NombreObjeto": "Car",
+      "Tipo": 0,
+      "X": 0,
+      "Y": -25,
+      "Z": 0,
+      "TiempoInicio": 6.75,
+      "TiempoFin": 1.33
+    },
+    {
+      "NombreObjeto": "Car",
+      "Tipo": 0,
+      "X": 0,
+      "Y": -25,
+      "Z": 0,
+      "TiempoInicio": 8.08,
+      "TiempoFin": 1.42
+    },
+    {
+      "NombreObjeto": "Car",
+      "Tipo": 0,
+      "X": 0,
+      "Y": -12,
+      "Z": 0,
+      "TiempoInicio": 9.5,
+      "TiempoFin": 1
+    },
+    {
+      "NombreObjeto": "Car",
+      "Tipo": 0,
+      "X": 0,
+      "Y": -12,
+      "Z": 0,
+      "TiempoInicio": 10.5,
+      "TiempoFin": 1
+    },
+    {
+      "NombreObjeto": "Car",
+      "Tipo": 0,
+      "X": 0,
+      "Y": -25,
+      "Z": 0,
+      "TiempoInicio": 11.5,
+      "TiempoFin": 1.42
+    },
+    {
+      "NombreObjeto": "Car",
+      "Tipo": 0,
+      "X": 0,
+      "Y": -25,
+      "Z": 0,
+      "TiempoInicio": 12.92,
+      "TiempoFin": 1.33
+    },
+    {
+      "NombreObjeto": "Car",
+      "Tipo": 0,
+      "X": 0,
+      "Y": -28,
+      "Z": 0,
+      "TiempoInicio": 14.25,
+      "TiempoFin": 1.75
+    },
+    {
+      "NombreObjeto": "Car",
+      "Tipo": 2,
+      "X": 0,
+      "Y": 0,
+      "Z": 60,
+      "TiempoInicio": 16,
+      "TiempoFin": 5
     }
   ]
 }
