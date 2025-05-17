@@ -223,29 +223,73 @@ namespace OpenTKCubo3D
             // Dic_objetos.Add("U3", U3);
             // Dic_objetos.Add("ejes", Ejes);
 
-            // Escenario escenario = new Escenario(Dic_objetos, 0, 0, 0);
+
+            //Escenario escenario = new Escenario(Dic_objetos, 0, 0, 0);
+
+            /*-------------------------------------------------------------------------------------*/
 
             Objeto AutoImportado = LectorModeloObj.ImportarOBJConMaterial("Modelos/CarV5/Chebroletobj.obj",-20.7f,4.3f,40);
+
+            Objeto Arbol1 = LectorModeloObj.ImportarOBJConMaterial("Modelos/Tree/Tree_1.obj",60f,12f,40);
+            Objeto Arbol2 = LectorModeloObj.ImportarOBJConMaterial("Modelos/Tree/Tree_2.obj",-10f,12f,-20);
+            Objeto Arbol3 = LectorModeloObj.ImportarOBJConMaterial("Modelos/Tree/Tree_3.obj",20f,12f,-10);
+            Objeto Arbol4 = LectorModeloObj.ImportarOBJConMaterial("Modelos/Tree/Tree_2.obj",60f,12f,-20);
+            Objeto Arbol5 = LectorModeloObj.ImportarOBJConMaterial("Modelos/Tree/Tree_3.obj",20f,12f,-80);
+
+
+
             Objeto Carretera = LectorModeloObj.ImportarOBJConMaterial("Modelos/CarV5/Carretera.obj",0,0,0);
             Dictionary<string, Objeto> Dic_objetos = new Dictionary<string, Objeto>
             {
                 { "Car", AutoImportado },
-                { "Carretera", Carretera }
+                { "Carretera", Carretera },
+                { "Arbol1", Arbol1 },
+                { "Arbol2", Arbol2 },
+                { "Arbol3", Arbol3 },
+                { "Arbol4", Arbol4 },
+                { "Arbol5", Arbol5 }
             };
             Escenario escenario = new Escenario(Dic_objetos, 0, -5, 0);
             escenario.Objetos["Carretera"].Escalacion(5);
+            escenario.Objetos["Arbol1"].Escalacion(5);
+            escenario.Objetos["Arbol2"].Escalacion(5);
+            escenario.Objetos["Arbol3"].Escalacion(5);
+            escenario.Objetos["Arbol4"].Escalacion(5);
+            escenario.Objetos["Arbol5"].Escalacion(5);
             escenario.Objetos["Car"].Rotacion(0,180,0);
 
-            //Escenario escenario2;
+            /*---------------------------------------------------------------------------------------*/
 
-            //_serializer.GuardarAJson(escenario,"escenario.json");
-            //escenario2 = (_serializer.CargarDesdeJson<Escenario>("escenario.json"))!;
+            // Escenario escenario;
+
+            _serializer.GuardarAJson(escenario,"escenario.json");
+            // escenario = (_serializer.CargarDesdeJson<Escenario>("escenario.json"))!;
+
+            // escenario.Objetos["Carretera"].Traslacion(-23f,-1.5f,-24);
+            // escenario.Objetos["Arbol1"].Traslacion(60f,-1.5f,40);
+            // escenario.Objetos["Arbol2"].Traslacion(-10f,-1.5f,-20);
+            // escenario.Objetos["Arbol3"].Traslacion(20f,-1.5f,-10);
+            // escenario.Objetos["Arbol4"].Traslacion(60f,-1.5f,-20);
+            // escenario.Objetos["Arbol5"].Traslacion(20f,-1.5f,-80);
+            // escenario.Objetos["Car"].Traslacion(-20.7f,0f,40);
+
+
+
+            // escenario.Objetos["Carretera"].Escalacion(5);
+            // escenario.Objetos["Arbol1"].Escalacion(5);
+            // escenario.Objetos["Arbol2"].Escalacion(5);
+            // escenario.Objetos["Arbol3"].Escalacion(5);
+            // escenario.Objetos["Arbol4"].Escalacion(5);
+            // escenario.Objetos["Arbol5"].Escalacion(5);
+            // escenario.Objetos["Car"].Rotacion(0,180,0);
+
+            /*----------------------------------------------------------------------------------------------------*/
 
             LibretoAnimacion libreto;
             libreto = new LibretoAnimacion(escenario);
             // Ir recto 0-5
             libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Trasladar, 0f, 0, -60f, 0f, 5f)); //0-5
-            
+
             // Ir a la derecha 5-10
 
             libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Trasladar, 3f, 0, -18f, 5f, 1.75f)); 
@@ -258,9 +302,9 @@ namespace OpenTKCubo3D
             libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Trasladar, 7f, 0, 9f, 12.92f, 1.33f)); 
             libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Trasladar, 3f, 0, 18f, 14.25f, 1.75f)); 
 
-            
-            
-            
+
+
+
              // rotar 
             libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Rotar, 0, -28f, 0, 5f, 1.75f));
             libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Rotar, 0, -25f, 0, 6.75f, 1.33f));
@@ -278,9 +322,11 @@ namespace OpenTKCubo3D
             // Ir abajo 10-15
             libreto.AgregarInstruccion(new InstruccionAnimacion("Car", TipoTransformacion.Trasladar, 0f, 0, 60f, 16f, 5f));
 
-            
-            
+
+
             _serializer.GuardarAJson(libreto, "Negocio/Animacion/libreto.json");
+            
+            /*-------------------------------------------------------------------------------------------------------*/
 
             //libreto = _serializer.CargarDesdeJson<LibretoAnimacion>("Negocio/Animacion/libreto.json")!;
 

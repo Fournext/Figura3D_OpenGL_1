@@ -46,6 +46,12 @@ public class LectorModeloObj
                 if (!partesPorGrupo.ContainsKey(grupoActual))
                     partesPorGrupo[grupoActual] = new List<Vertice>();
             }
+            else if (linea.StartsWith("g "))
+            {
+                grupoActual = linea.Substring(2).Trim().ToLower(); 
+                if (!partesPorGrupo.ContainsKey(grupoActual))
+                    partesPorGrupo[grupoActual] = new List<Vertice>();
+            }
             else if (linea.StartsWith("f "))
             {
                 if (!materiales.ContainsKey(materialActual)) continue;
